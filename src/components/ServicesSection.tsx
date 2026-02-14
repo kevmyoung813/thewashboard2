@@ -46,7 +46,7 @@ const ServicesSection = () => {
 
         <div className="text-center mt-12">
           <a
-            href="#services"
+            href="/services"
             className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
             Explore Our Services
