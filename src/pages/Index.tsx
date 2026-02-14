@@ -5,6 +5,7 @@ import LocalTrustSection from "@/components/LocalTrustSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CommitmentSection from "@/components/CommitmentSection";
+import CtaBand from "@/components/CtaBand";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,6 +19,8 @@ const Index = () => {
         <ServicesSection />
         <HowItWorksSection />
         <CommitmentSection />
+        <CommitmentSection />
+        <CtaBand />
       </main>
       <Footer />
     </div>
