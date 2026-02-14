@@ -1,34 +1,68 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "How To", href: "#how-it-works" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "How To", href: "/#how-it-works" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    // Handle hash links on the same page or from another page
+    if (href.startsWith("/#")) {
+      const hash = href.substring(1);
+      if (location.pathname === "/") {
+        const el = document.querySelector(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
+      // If on another page, react-router will navigate to / and the hash will be handled
+    }
+  };
+
+  const renderLink = (link: { label: string; href: string }, className: string) => {
+    if (link.href.startsWith("/#")) {
+      return (
+        <Link
+          key={link.href}
+          to={link.href}
+          className={className}
+          onClick={() => handleNavClick(link.href)}
+        >
+          {link.label}
+        </Link>
+      );
+    }
+    return (
+      <Link
+        key={link.href}
+        to={link.href}
+        className={className}
+        onClick={() => setMobileOpen(false)}
+      >
+        {link.label}
+      </Link>
+    );
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <a href="#home" className="text-xl md:text-2xl font-bold text-primary tracking-tight">
+        <Link to="/" className="text-xl md:text-2xl font-bold text-primary tracking-tight">
           The Washboard
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            renderLink(link, "text-sm font-medium text-foreground hover:text-primary transition-colors")
+          )}
           <a
             href="tel:2707687058"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
@@ -52,16 +86,9 @@ const Header = () => {
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-background px-4 pb-4">
           <nav className="flex flex-col gap-3 pt-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-base font-medium text-foreground hover:text-primary py-2"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              renderLink(link, "text-base font-medium text-foreground hover:text-primary py-2")
+            )}
             <a
               href="tel:2707687058"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground mt-2"
