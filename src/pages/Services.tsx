@@ -2,6 +2,7 @@ import { MapPin, Phone, WashingMachine, HandHelping, Bed, CreditCard, Clock, Spa
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-laundromat.jpg";
+import selfServiceImage from "@/assets/self-service-machines.jpg";
 import murrayInterior from "@/assets/murray-interior.jpg";
 
 const Services = () => {
@@ -48,10 +49,10 @@ const Services = () => {
             </ul>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
-                src={heroImage}
-                alt="Row of modern washing machines at The Washboard in Murray, KY"
-                className="w-full h-64 md:h-80 object-cover"
-                loading="lazy"
+              src={selfServiceImage}
+              alt="Folded laundry and modern washing machines at The Washboard in Murray, KY"
+              className="w-full h-64 md:h-80 object-cover"
+              loading="lazy"
               />
             </div>
           </div>
