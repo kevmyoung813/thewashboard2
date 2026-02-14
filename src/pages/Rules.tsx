@@ -108,24 +108,6 @@ const Rules = () => {
           </div>
         </section>
 
-        {/* Closing + CTA */}
-        <section className="py-16 md:py-20 bg-primary">
-          <div className="container mx-auto px-4 md:px-8 text-center max-w-2xl">
-            <h2 className="text-2xl md:text-3xl font-bold !text-primary-foreground mb-4">
-              Thank You for Helping Us Maintain a Great Laundry Experience
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 leading-relaxed">
-              We are proud to serve Murray, Calloway County, and the surrounding community. Your cooperation helps us provide a clean, comfortable space for everyone.
-            </p>
-            <a
-              href="tel:2707687058"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
-            >
-              <Phone size={18} />
-              Call 270-768-7058
-            </a>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
