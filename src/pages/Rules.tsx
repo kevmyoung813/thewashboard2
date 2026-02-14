@@ -1,20 +1,55 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ShieldCheck, Phone, MapPin } from "lucide-react";
+import { ShieldCheck, Phone } from "lucide-react";
 
-const rules = [
-  "All customers must use the laundry card system — no coins.",
-  "Do not overload washers or dryers. Follow posted load limits.",
-  "Use only the recommended amount of detergent.",
-  "Remove laundry promptly when cycles are complete.",
-  "Unattended items may be removed to allow others to use machines.",
-  "Children must be supervised at all times.",
-  "No dyeing or bleaching of fabrics in machines.",
-  "Do not wash heavily soiled or hazardous materials.",
-  "Keep the facility clean — dispose of lint, trash, and leftover supplies properly.",
-  "Report any machine issues to management immediately.",
-  "The Washboard is not responsible for lost, stolen, or damaged items.",
-  "Respect other customers and staff at all times.",
+const sections = [
+  {
+    title: "Customer Responsibility",
+    items: [
+      "Customers are responsible for their own safety and personal property.",
+      "The Washboard is not responsible for lost, stolen, or damaged items.",
+      "Please check machines before use and after use for any items left behind.",
+    ],
+  },
+  {
+    title: "Using Our Equipment",
+    items: [
+      "Do not overload washers or dryers. Proper loading ensures better results and protects equipment.",
+      "Use only the recommended amount of detergent.",
+      "Do not use dyes or products that may damage machines.",
+      "If you experience an issue, please notify staff when available.",
+    ],
+  },
+  {
+    title: "Unattended Laundry",
+    items: [
+      "Please monitor your laundry while it is in use.",
+      "Laundry left unattended after cycles are complete may be removed to allow other customers to use machines.",
+      "Abandoned items may be disposed of or donated after a reasonable period of time.",
+      "Wash & Fold orders not picked up within 30 days may be disposed of or donated.",
+    ],
+  },
+  {
+    title: "Safety & Courtesy",
+    intro: "To maintain a welcoming environment for all customers:",
+    items: [
+      "Children must be supervised at all times.",
+      "No running or horseplay.",
+      "Do not sit or stand on folding tables, washers, or dryers.",
+      "No alcohol, smoking, or vaping inside the facility.",
+      "Shirts and shoes are required at all times.",
+      "No loitering or soliciting.",
+    ],
+  },
+  {
+    title: "Respecting the Facility",
+    intro: "Please help keep the laundromat clean.",
+    items: [
+      "Dispose of trash properly.",
+      "Be mindful of wet floors.",
+      "Return carts to designated areas after use.",
+    ],
+  },
 ];
 
 const Rules = () => {
@@ -22,57 +57,73 @@ const Rules = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
+        {/* Hero */}
         <section className="py-20 md:py-28 bg-background">
-          <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-            <div className="text-center mb-12">
-              <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mx-auto mb-5">
-                <ShieldCheck size={28} className="text-primary" />
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Facility Rules
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Please follow these guidelines to keep The Washboard a clean, safe, and friendly place for everyone.
-              </p>
+          <div className="container mx-auto px-4 md:px-8 max-w-3xl text-center">
+            <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mx-auto mb-5">
+              <ShieldCheck size={28} className="text-primary" />
             </div>
-
-            <div className="bg-card rounded-2xl border border-border shadow-sm p-6 md:p-10">
-              <ol className="space-y-4">
-                {rules.map((rule, i) => (
-                  <li key={i} className="flex gap-3 text-sm md:text-base leading-relaxed">
-                    <span className="font-bold text-primary min-w-[1.5rem]">{i + 1}.</span>
-                    <span className="text-foreground">{rule}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Store Guidelines &amp; Policies
+            </h1>
+            <p className="text-lg text-muted-foreground mb-2">
+              To keep The Washboard clean, safe, and comfortable for everyone in Murray, KY, we ask all customers to follow the guidelines below.
+            </p>
+            <p className="text-base text-muted-foreground">
+              We appreciate your cooperation and thank you for choosing The Washboard.
+            </p>
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Sections */}
+        <section className="pb-20 md:pb-28 bg-background">
+          <div className="container mx-auto px-4 md:px-8 max-w-3xl space-y-8">
+            {sections.map((section, i) => (
+              <div
+                key={i}
+                className="bg-secondary rounded-2xl border border-border shadow-sm p-6 md:p-8"
+              >
+                <h2 className="text-xl md:text-2xl font-bold mb-3">
+                  {section.title}
+                </h2>
+                <div className="h-px bg-border mb-5" />
+                {section.intro && (
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {section.intro}
+                  </p>
+                )}
+                <ul className="space-y-3">
+                  {section.items.map((item, j) => (
+                    <li
+                      key={j}
+                      className="flex gap-3 text-[0.95rem] md:text-base leading-relaxed text-foreground"
+                    >
+                      <span className="text-primary mt-1.5 shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Closing + CTA */}
         <section className="py-16 md:py-20 bg-primary">
-          <div className="container mx-auto px-4 md:px-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-8">
-              Questions About Our Policies?
+          <div className="container mx-auto px-4 md:px-8 text-center max-w-2xl">
+            <h2 className="text-2xl md:text-3xl font-bold !text-primary-foreground mb-4">
+              Thank You for Helping Us Maintain a Great Laundry Experience
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:2707687058"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
-              >
-                <Phone size={18} />
-                Call 270-768-7058
-              </a>
-              <a
-                href="https://maps.google.com/?q=605+S+12th+St+Murray+KY"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-              >
-                <MapPin size={18} />
-                Visit Us in Murray, KY
-              </a>
-            </div>
+            <p className="text-primary-foreground/80 mb-8 leading-relaxed">
+              We are proud to serve Murray, Calloway County, and the surrounding community. Your cooperation helps us provide a clean, comfortable space for everyone.
+            </p>
+            <a
+              href="tel:2707687058"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
+            >
+              <Phone size={18} />
+              Call 270-768-7058
+            </a>
           </div>
         </section>
       </main>
