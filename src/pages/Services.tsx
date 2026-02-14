@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-laundromat.jpg";
 import selfServiceImage from "@/assets/self-service-machines.jpg";
-import murrayInterior from "@/assets/murray-interior.jpg";
+import washFoldImage from "@/assets/wash-fold-laundry.jpg";
 
 const Services = () => {
   return (
@@ -65,7 +65,7 @@ const Services = () => {
               {/* Image - shows first on mobile */}
               <div className="rounded-2xl overflow-hidden shadow-lg order-first md:order-last">
                 <img
-                  src={murrayInterior}
+                  src={washFoldImage}
                   alt="Neatly folded laundry at The Washboard"
                   className="w-full h-full object-cover"
                   loading="lazy"
