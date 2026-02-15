@@ -64,7 +64,7 @@ const HowToLaundryCard = () => {
               <a href="tel:2707687058" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
                 <Phone size={18} /> Call 270-768-7058
               </a>
-              <a href="https://maps.google.com/?q=605+S+12th+St+Murray+KY" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
                 <MapPin size={18} /> Visit Us in Murray, KY
               </a>
             </div>
