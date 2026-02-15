@@ -8,7 +8,7 @@ const sections = [
     items: [
       "Customers are responsible for their own safety and personal property.",
       "The Washboard is not responsible for lost, stolen, or damaged items.",
-      "Please check machines before use and after use for any items left behind.",
+      "Please check machines before and after use for any items left behind.",
     ],
   },
   {
@@ -17,7 +17,7 @@ const sections = [
       "Do not overload washers or dryers. Proper loading ensures better results and protects equipment.",
       "Use only the recommended amount of detergent.",
       "Do not use dyes or products that may damage machines.",
-      "If you experience an issue, please notify staff when available.",
+      "If you experience an issue with a machine, please notify a staff member.",
     ],
   },
   {
@@ -25,7 +25,7 @@ const sections = [
     items: [
       "Please monitor your laundry while it is in use.",
       "Laundry left unattended after cycles are complete may be removed to allow other customers to use machines.",
-      "Abandoned items may be disposed of or donated after a reasonable period of time.",
+      "Abandoned items may be disposed of or donated after a reasonable period.",
       "Wash & Fold orders not picked up within 30 days may be disposed of or donated.",
     ],
   },

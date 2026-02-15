@@ -66,7 +66,7 @@ const MapContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">Hours</p>
-                  <p className="text-muted-foreground">Open Everyday</p>
+                  <p className="text-muted-foreground">Open Every Day</p>
                 </div>
               </div>
             </div>

@@ -20,12 +20,12 @@ const HeroSection = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight !text-primary-foreground mb-6">
             Murray's Friendly Neighborhood Laundromat
           </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 font-medium mb-2">
-            Clean machines. Comfortable space. Real customer care.
-          </p>
-          <p className="text-base md:text-lg text-primary-foreground/75 mb-8">
-            Proudly serving the Murray, KY community with a better laundry experience.
-          </p>
+            <p className="text-lg md:text-xl text-primary-foreground/90 font-medium mb-2">
+              Clean machines. Comfortable space. Genuine customer care.
+            </p>
+            <p className="text-base md:text-lg text-primary-foreground/75 mb-8">
+              Serving the Murray, KY community with a dependable laundry experience.
+            </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-4">
             <a
@@ -47,7 +47,7 @@ const HeroSection = () => {
           </div>
 
           <p className="text-sm text-primary-foreground/60">
-            Open Everyday • Wash &amp; Fold Service Available
+            Open Every Day · Wash &amp; Fold Service Available
           </p>
         </div>
       </div>

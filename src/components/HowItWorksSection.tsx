@@ -15,7 +15,7 @@ const HowItWorksSection = () => {
           Simple. Straightforward. Comfortable.
         </h2>
         <p className="text-muted-foreground mb-14 max-w-xl mx-auto">
-          Getting your laundry done has never been easier.
+          A few quick steps are all it takes to get started.
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
