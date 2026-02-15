@@ -10,6 +10,8 @@ import HowToWashers from "./pages/HowToWashers";
 import HowToDryers from "./pages/HowToDryers";
 import HowToLaundryCard from "./pages/HowToLaundryCard";
 import Rules from "./pages/Rules";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/how-to/dryers" element={<HowToDryers />} />
           <Route path="/how-to/laundry-card" element={<HowToLaundryCard />} />
           <Route path="/rules" element={<Rules />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

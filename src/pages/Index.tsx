@@ -6,6 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CommitmentSection from "@/components/CommitmentSection";
 import MapContactSection from "@/components/MapContactSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 import CtaBand from "@/components/CtaBand";
 import Footer from "@/components/Footer";
 
@@ -21,6 +22,7 @@ const Index = () => {
         <HowItWorksSection />
         <CommitmentSection />
         <MapContactSection />
+        <BlogPreviewSection />
         <CtaBand />
       </main>
       <Footer />
