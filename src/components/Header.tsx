@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Facebook } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 
@@ -7,9 +7,8 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "How To", href: "/how-to" },
+  { label: "Contact", href: "/#contact" },
 ];
-
-const FACEBOOK_URL = "https://facebook.com"; // TODO: replace with actual Facebook page URL
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,12 +16,14 @@ const Header = () => {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
+    // Handle hash links on the same page or from another page
     if (href.startsWith("/#")) {
       const hash = href.substring(1);
       if (location.pathname === "/") {
         const el = document.querySelector(hash);
         el?.scrollIntoView({ behavior: "smooth" });
       }
+      // If on another page, react-router will navigate to / and the hash will be handled
     }
   };
 
@@ -52,7 +53,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         <Link to="/" className="flex items-center">
           <img src={logoHorizontal} alt="The Washboard" className="h-10 md:h-12 w-auto" />
@@ -64,13 +65,11 @@ const Header = () => {
             renderLink(link, "text-sm font-medium text-foreground hover:text-primary transition-colors")
           )}
           <a
-            href={FACEBOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground hover:text-primary transition-colors"
-            aria-label="Facebook"
+            href="tel:2707687058"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
-            <Facebook size={20} />
+            <Phone size={16} />
+            270-768-7058
           </a>
         </nav>
 
@@ -92,13 +91,11 @@ const Header = () => {
               renderLink(link, "text-base font-medium text-foreground hover:text-primary py-2")
             )}
             <a
-              href={FACEBOOK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-primary py-2"
+              href="tel:2707687058"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground mt-2"
             >
-              <Facebook size={20} />
-              Facebook
+              <Phone size={16} />
+              Call 270-768-7058
             </a>
           </nav>
         </div>
