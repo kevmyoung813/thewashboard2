@@ -36,24 +36,24 @@ const Services = () => {
             </p>
             <ul className="space-y-3 mb-10">
               {[
-                { icon: Maximize, text: "Multiple washer and dryer sizes" },
-                { icon: Sparkles, text: "Clean, well-maintained equipment" },
-                { icon: Maximize, text: "Spacious folding tables" },
-                { icon: Clock, text: "Open daily for your convenience" },
-              ].map((item) => (
-                <li key={item.text} className="flex items-center gap-3 text-foreground/80">
+              { icon: Maximize, text: "Multiple washer and dryer sizes" },
+              { icon: Sparkles, text: "Clean, well-maintained equipment" },
+              { icon: Maximize, text: "Spacious folding tables" },
+              { icon: Clock, text: "Open daily for your convenience" }].
+              map((item) =>
+              <li key={item.text} className="flex items-center gap-3 text-foreground/80">
                   <item.icon size={18} className="text-primary shrink-0" />
                   <span>{item.text}</span>
                 </li>
-              ))}
+              )}
             </ul>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
-              src={selfServiceImage}
-              alt="Folded laundry and modern washing machines at The Washboard in Murray, KY"
-              className="w-full h-64 md:h-80 object-cover"
-              loading="lazy"
-              />
+                src={selfServiceImage}
+                alt="Folded laundry and modern washing machines at The Washboard in Murray, KY"
+                className="w-full h-64 md:h-80 object-cover"
+                loading="lazy" />
+
             </div>
           </div>
         </section>
@@ -68,8 +68,8 @@ const Services = () => {
                   src={washFoldImage}
                   alt="Neatly folded laundry at The Washboard"
                   className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                  loading="lazy" />
+
               </div>
 
               {/* Text */}
@@ -94,18 +94,18 @@ const Services = () => {
 
                   <ul className="space-y-3 text-foreground/80">
                     {[
-                      ["Clothing", "$1.50 per pound"],
-                      ["Twin/Full Comforter", "$15 each"],
-                      ["Queen Comforter", "$20 each"],
-                      ["King Comforter", "$25 each"],
-                      ["Small Pillow", "$5 each"],
-                      ["Large Pillow", "$10 each"],
-                    ].map(([item, price]) => (
-                      <li key={item} className="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0">
+                    ["Clothing", "$1.50 per pound"],
+                    ["Twin/Full Comforter", "$15 each"],
+                    ["Queen Comforter", "$20 each"],
+                    ["King Comforter", "$25 each"],
+                    ["Small Pillow", "$5 each"],
+                    ["Large Pillow", "$10 each"]].
+                    map(([item, price]) =>
+                    <li key={item} className="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0">
                         <span>{item}</span>
                         <span className="font-semibold text-primary">{price}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
 
                   <p className="text-muted-foreground text-xs mt-5 leading-relaxed">
@@ -131,11 +131,11 @@ const Services = () => {
             </p>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
-                src={heroImage}
+
                 alt="Clean laundry equipment at The Washboard laundromat"
                 className="w-full h-64 md:h-80 object-cover"
-                loading="lazy"
-              />
+                loading="lazy" src="/lovable-uploads/e24166d3-0aea-4e4c-8f03-a3cea4d293e5.jpg" />
+
             </div>
           </div>
         </section>
@@ -149,8 +149,8 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
                 href="tel:2707687058"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
-              >
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
+
                 <Phone size={18} />
                 Call 270-768-7058
               </a>
@@ -158,8 +158,8 @@ const Services = () => {
                 href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-              >
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+
                 <MapPin size={18} />
                 Get Directions
               </a>
@@ -168,8 +168,8 @@ const Services = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Services;
