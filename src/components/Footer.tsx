@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, Facebook } from "lucide-react";
 import logoStacked from "@/assets/logo-stacked.png";
 
 const footerLinks = [
@@ -62,6 +62,15 @@ const Footer = () => {
             >
               <MapPin size={14} />
               605 S. 12th St, Murray, KY
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            >
+              <Facebook size={14} />
+              Facebook
             </a>
           </div>
         </div>

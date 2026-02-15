@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 
@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "How To", href: "/how-to" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 const Header = () => {
@@ -53,7 +52,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
+    <header className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         <Link to="/" className="flex items-center">
           <img src={logoHorizontal} alt="The Washboard" className="h-10 md:h-12 w-auto" />
@@ -66,10 +65,18 @@ const Header = () => {
           )}
           <a
             href="tel:2707687058"
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Contact
+          </a>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
-            <Phone size={16} />
-            270-768-7058
+            <MapPin size={16} />
+            Get Directions
           </a>
         </nav>
 
@@ -92,10 +99,18 @@ const Header = () => {
             )}
             <a
               href="tel:2707687058"
+              className="text-base font-medium text-foreground hover:text-primary py-2"
+            >
+              Contact
+            </a>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground mt-2"
             >
-              <Phone size={16} />
-              Call 270-768-7058
+              <MapPin size={16} />
+              Get Directions
             </a>
           </nav>
         </div>
