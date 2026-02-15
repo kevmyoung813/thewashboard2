@@ -59,6 +59,16 @@ const BlogPost = () => {
                     </ul>
                   );
                 }
+                if (/^\d+\.\s/.test(block)) {
+                  const items = block.split("\n").filter((l) => /^\d+\.\s/.test(l));
+                  return (
+                    <ol key={i} className="list-decimal list-inside space-y-1 mb-6 text-foreground/80 leading-relaxed">
+                      {items.map((item, j) => (
+                        <li key={j}>{item.replace(/^\d+\.\s/, "")}</li>
+                      ))}
+                    </ol>
+                  );
+                }
                 return (
                   <p key={i} className="text-foreground/80 leading-relaxed mb-6">
                     {block}
