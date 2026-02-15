@@ -14,7 +14,7 @@ const LocalTrustSection = () => {
               Serving Murray with Care
             </h2>
             <p className="text-foreground/80 leading-relaxed text-lg">
-              We're not just another laundromat. We're part of the Murray community. Whether you're a local family, a Murray State student, or new to town, we're here to make laundry simple and dependable — right here in Calloway County.
+              The Washboard is part of the Murray community. Whether you are a local family, a Murray State student, or new to town, we are here to make laundry simple and dependable — right here in Calloway County.
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">

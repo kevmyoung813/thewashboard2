@@ -11,10 +11,10 @@ const CommitmentSection = () => {
           Our Commitment to You
         </h2>
         <p className="text-foreground/80 leading-relaxed text-lg mb-4">
-          We believe great customer service still matters. That's why we focus on maintaining a clean space, clear store guidelines, and a welcoming atmosphere for everyone who walks through our doors.
+          Great customer service is at the heart of what we do. We maintain a clean space, clear store guidelines, and a welcoming atmosphere for everyone who walks through our doors.
         </p>
         <p className="text-foreground/80 leading-relaxed text-lg">
-          We want every visit to The Washboard to feel easy and dependable.
+          Every visit to The Washboard should feel easy and dependable.
         </p>
       </div>
     </section>

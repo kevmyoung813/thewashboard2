@@ -32,7 +32,7 @@ const Services = () => {
               <h2 className="text-2xl md:text-3xl font-bold">Self-Service Laundry</h2>
             </div>
             <p className="text-foreground/80 text-lg leading-relaxed mb-6 max-w-2xl">
-              Our modern washers and dryers are designed to make laundry simple and efficient. With our easy-to-use reloadable laundry card system, there's no need for coins — just load your card and start.
+              Our modern washers and dryers are designed for simplicity and efficiency. With our reloadable laundry card system, there is no need for coins — load your card and start your cycle.
             </p>
             <ul className="space-y-3 mb-10">
               {[
@@ -81,7 +81,7 @@ const Services = () => {
                   <h2 className="text-2xl md:text-3xl font-bold">Wash &amp; Fold Service</h2>
                 </div>
                 <p className="text-foreground/80 text-lg leading-relaxed mb-8">
-                  Short on time? Drop off your laundry and let our team handle the washing, drying, and folding. Your items are returned fresh, neatly folded, and ready to put away — perfect for busy Murray State students and families throughout Calloway County.
+                  When time is limited, drop off your laundry and let our team handle the washing, drying, and folding. Your items are returned fresh, neatly folded, and ready to put away — ideal for Murray State students and families throughout Calloway County.
                 </p>
 
                 {/* Pricing Card */}
@@ -127,7 +127,7 @@ const Services = () => {
               <h2 className="text-2xl md:text-3xl font-bold">Comforters &amp; Specialty Items</h2>
             </div>
             <p className="text-foreground/80 text-lg leading-relaxed mb-10 max-w-2xl">
-              Large bedding and select specialty items can be handled with care. Stop by our Murray, KY location to speak with our team about specialty cleaning needs.
+              We handle large bedding and select specialty items with care. Visit our Murray, KY location to speak with our team about your specific needs.
             </p>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img

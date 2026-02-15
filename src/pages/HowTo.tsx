@@ -75,8 +75,8 @@ const HowTo = () => {
               How to Use Our Machines
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-3">
-              Simple step-by-step instructions to make your visit to The
-              Washboard easy and stress-free.
+              Step-by-step instructions to help make your visit to The
+              Washboard simple and straightforward.
             </p>
             <p className="text-sm text-muted-foreground">
               Serving customers throughout Murray, KY with modern, easy-to-use

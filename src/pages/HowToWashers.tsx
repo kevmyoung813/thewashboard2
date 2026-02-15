@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const steps = [
-  "Load your clothes into the washer. Do not overload — leave room for clothes to move freely.",
+  "Load your clothes into the washer. Avoid overloading — leave room for items to move freely.",
   "Close the washer door securely.",
   "Select your wash cycle on the machine display.",
   "Tap your loaded laundry card on the card reader to start.",

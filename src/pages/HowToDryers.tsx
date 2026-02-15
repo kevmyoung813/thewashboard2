@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const steps = [
-  "Transfer your washed clothes into the dryer. Shake items out to reduce drying time.",
+  "Transfer your washed clothes into the dryer. Shake out items to help reduce drying time.",
   "Close the dryer door securely.",
   "Select your preferred heat setting on the display.",
   "Tap your loaded laundry card on the card reader to start.",

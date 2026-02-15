@@ -4,11 +4,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const steps = [
-  "Pick up a reloadable laundry card at The Washboard — available at the front.",
+  "Pick up a reloadable laundry card at The Washboard, available at the front counter.",
   "Add value to your card using the card loading station.",
   "Take your card to any available washer or dryer.",
   "Tap your card on the machine's card reader to start your cycle.",
-  "Reload your card anytime you need more value — quick and easy.",
+  "Reload your card anytime you need more value.",
 ];
 
 const HowToLaundryCard = () => {

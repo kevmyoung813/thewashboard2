@@ -18,10 +18,10 @@ const ExperienceSection = () => {
               Laundry Should Feel Easy — Not Stressful
             </h2>
             <p className="text-foreground/80 leading-relaxed mb-4">
-              At The Washboard, we've created a space where laundry feels simple, safe, and comfortable. From clean equipment to a well-maintained facility and helpful assistance when available, everything here is designed with our customers in mind.
+              At The Washboard, we have created a space where laundry feels simple, safe, and comfortable. Clean equipment, a well-maintained facility, and helpful assistance are all part of the experience.
             </p>
             <p className="text-foreground/80 leading-relaxed mb-8">
-              We're proud to serve families, students, and professionals throughout Murray and the surrounding community.
+              We are proud to serve families, students, and professionals throughout Murray and the surrounding community.
             </p>
           </div>
 
