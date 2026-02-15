@@ -2,14 +2,8 @@ import { CreditCard, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const steps = [
-  "Pick up a reloadable laundry card at The Washboard, available at the front counter.",
-  "Add value to your card using the card loading station.",
-  "Take your card to any available washer or dryer.",
-  "Tap your card on the machine's card reader to start your cycle.",
-  "Reload your card anytime you need more value.",
-];
+import { laundryCardSteps, laundryCardTip } from "@/data/howto";
+import { contactInfo } from "@/data/contact";
 
 const HowToLaundryCard = () => {
   return (
@@ -39,7 +33,7 @@ const HowToLaundryCard = () => {
             </p>
 
             <ol className="space-y-4 mb-12">
-              {steps.map((step, i) => (
+              {laundryCardSteps.map((step, i) => (
                 <li key={i} className="flex gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">
                     {i + 1}
@@ -50,7 +44,7 @@ const HowToLaundryCard = () => {
             </ol>
 
             <div className="bg-accent rounded-2xl p-6 text-sm text-muted-foreground">
-              <strong className="text-foreground">Tip:</strong> Keep your laundry card safe — it holds your balance and can be reloaded as many times as you need. Perfect for Murray State students and Calloway County families who visit regularly.
+              <strong className="text-foreground">Tip:</strong> {laundryCardTip}
             </div>
           </div>
         </section>
@@ -61,10 +55,10 @@ const HowToLaundryCard = () => {
               Need Help?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:2707687058" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
-                <Phone size={18} /> Call 270-768-7058
+              <a href={contactInfo.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
+                <Phone size={18} /> Call {contactInfo.phoneFormatted}
               </a>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+              <a href={contactInfo.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
                 <MapPin size={18} /> Visit Us in Murray, KY
               </a>
             </div>

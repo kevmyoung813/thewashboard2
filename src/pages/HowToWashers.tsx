@@ -2,14 +2,8 @@ import { WashingMachine, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const steps = [
-  "Load your clothes into the washer. Avoid overloading — leave room for items to move freely.",
-  "Close the washer door securely.",
-  "Select your wash cycle on the machine display.",
-  "Tap your loaded laundry card on the card reader to start.",
-  "Wait for the cycle to complete, then promptly remove your items.",
-];
+import { washerSteps, washerTip } from "@/data/howto";
+import { contactInfo } from "@/data/contact";
 
 const HowToWashers = () => {
   return (
@@ -39,7 +33,7 @@ const HowToWashers = () => {
             </p>
 
             <ol className="space-y-4 mb-12">
-              {steps.map((step, i) => (
+              {washerSteps.map((step, i) => (
                 <li key={i} className="flex gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">
                     {i + 1}
@@ -50,7 +44,7 @@ const HowToWashers = () => {
             </ol>
 
             <div className="bg-accent rounded-2xl p-6 text-sm text-muted-foreground">
-              <strong className="text-foreground">Tip:</strong> Use only the recommended amount of detergent. Overusing detergent can affect wash quality and machine performance.
+              <strong className="text-foreground">Tip:</strong> {washerTip}
             </div>
           </div>
         </section>
@@ -62,10 +56,10 @@ const HowToWashers = () => {
               Need Help?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:2707687058" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
-                <Phone size={18} /> Call 270-768-7058
+              <a href={contactInfo.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
+                <Phone size={18} /> Call {contactInfo.phoneFormatted}
               </a>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+              <a href={contactInfo.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
                 <MapPin size={18} /> Visit Us in Murray, KY
               </a>
             </div>

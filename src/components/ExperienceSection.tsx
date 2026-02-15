@@ -1,12 +1,5 @@
 import { Check } from "lucide-react";
-
-const bullets = [
-  "Clean, modern machines that are easy to use",
-  "Reloadable laundry card system — no coins needed",
-  "Comfortable, welcoming environment",
-  "Friendly support when you need it",
-  "Wash & Fold service for busy days",
-];
+import { experienceFeatures } from "@/data/services";
 
 const ExperienceSection = () => {
   return (
@@ -28,7 +21,7 @@ const ExperienceSection = () => {
           <div className="bg-accent rounded-2xl p-8 md:p-10">
             <h3 className="text-lg font-semibold text-primary mb-6">What to Expect</h3>
             <ul className="space-y-4">
-              {bullets.map((item) => (
+              {experienceFeatures.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                     <Check size={14} className="text-primary-foreground" />

@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock } from "lucide-react";
+import { contactInfo } from "@/data/contact";
 
 const MapContactSection = () => {
   return (
@@ -9,7 +10,7 @@ const MapContactSection = () => {
           <div className="rounded-2xl overflow-hidden shadow-md min-h-[350px]">
             <iframe
               title="The Washboard Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.0!2d-88.3157!3d36.6035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x887b2e1e1e1e1e1e%3A0x0!2s605+S+12th+St%2C+Murray%2C+KY+42071!5e0!3m2!1sen!1sus!4v1700000000000"
+              src={contactInfo.googleMapsEmbedUrl}
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "350px" }}
@@ -32,10 +33,12 @@ const MapContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">Address</p>
-                  <p className="text-muted-foreground">605 S. 12th St</p>
-                  <p className="text-muted-foreground">Murray, KY 42071</p>
+                  <p className="text-muted-foreground">{contactInfo.address.street}</p>
+                  <p className="text-muted-foreground">
+                    {contactInfo.address.city}, {contactInfo.address.state} {contactInfo.address.zip}
+                  </p>
                   <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+                    href={contactInfo.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary font-medium text-sm hover:underline mt-1 inline-block"
@@ -52,10 +55,10 @@ const MapContactSection = () => {
                 <div>
                   <p className="font-semibold text-foreground mb-1">Phone</p>
                   <a
-                    href="tel:2707687058"
+                    href={contactInfo.phoneHref}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    270-768-7058
+                    {contactInfo.phoneFormatted}
                   </a>
                 </div>
               </div>
@@ -66,7 +69,7 @@ const MapContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">Hours</p>
-                  <p className="text-muted-foreground">Open Every Day</p>
+                  <p className="text-muted-foreground">{contactInfo.hours}</p>
                 </div>
               </div>
             </div>

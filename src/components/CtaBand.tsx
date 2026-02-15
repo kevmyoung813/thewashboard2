@@ -1,4 +1,5 @@
 import { MapPin, Phone } from "lucide-react";
+import { contactInfo } from "@/data/contact";
 
 const CtaBand = () => {
   return (
@@ -10,14 +11,14 @@ const CtaBand = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="tel:2707687058"
+            href={contactInfo.phoneHref}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
           >
             <Phone size={18} />
-            Call 270-768-7058
+            Call {contactInfo.phoneFormatted}
           </a>
           <a
-            href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+            href={contactInfo.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"

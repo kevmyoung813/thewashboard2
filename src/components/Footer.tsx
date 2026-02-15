@@ -1,14 +1,8 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Facebook } from "lucide-react";
 import logoStacked from "@/assets/logo-stacked.png";
-
-const footerLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "How To", href: "/how-to" },
-  { label: "Rules", href: "/rules" },
-  { label: "Contact", href: "/#contact" },
-];
+import { footerLinks } from "@/data/navigation";
+import { contactInfo } from "@/data/contact";
 
 const Footer = () => {
   return (
@@ -48,23 +42,23 @@ const Footer = () => {
               Contact Us
             </h3>
             <a
-              href="tel:2707687058"
+              href={contactInfo.phoneHref}
               className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
               <Phone size={14} />
-              270-768-7058
+              {contactInfo.phoneFormatted}
             </a>
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+              href={contactInfo.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
               <MapPin size={14} />
-              605 S. 12th St, Murray, KY
+              {contactInfo.address.street}, {contactInfo.address.city}, {contactInfo.address.state}
             </a>
             <a
-              href="https://facebook.com"
+              href={contactInfo.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"

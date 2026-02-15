@@ -1,11 +1,14 @@
 import { CreditCard, MonitorSmartphone, Fingerprint, Armchair } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { howItWorksSteps } from "@/data/howto";
 
-const steps = [
-  { icon: CreditCard, label: "Load your laundry card" },
-  { icon: MonitorSmartphone, label: "Choose your machine" },
-  { icon: Fingerprint, label: "Tap your card to start" },
-  { icon: Armchair, label: "Relax while your laundry gets done" },
-];
+const iconMap: Record<string, LucideIcon> = {
+  CreditCard,
+  MonitorSmartphone,
+  Fingerprint,
+  Armchair,
+};
 
 const HowItWorksSection = () => {
   return (
@@ -19,27 +22,30 @@ const HowItWorksSection = () => {
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
-          {steps.map((step, index) => (
-            <div key={step.label} className="flex flex-col items-center gap-4">
-              <div className="relative">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                  <step.icon size={28} className="text-primary-foreground" />
+          {howItWorksSteps.map((step, index) => {
+            const Icon = iconMap[step.icon];
+            return (
+              <div key={step.label} className="flex flex-col items-center gap-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                    <Icon size={28} className="text-primary-foreground" />
+                  </div>
+                  <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-primary-foreground text-primary text-xs font-bold flex items-center justify-center border-2 border-primary">
+                    {index + 1}
+                  </span>
                 </div>
-                <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-primary-foreground text-primary text-xs font-bold flex items-center justify-center border-2 border-primary">
-                  {index + 1}
-                </span>
+                <p className="text-sm font-medium text-foreground/80 leading-snug">{step.label}</p>
               </div>
-              <p className="text-sm font-medium text-foreground/80 leading-snug">{step.label}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <a
-          href="#how-it-works"
+        <Link
+          to="/how-to"
           className="inline-flex items-center justify-center rounded-full border-2 border-primary px-8 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           See How It Works
-        </a>
+        </Link>
       </div>
     </section>
   );

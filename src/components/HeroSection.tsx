@@ -1,5 +1,6 @@
 import { MapPin, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-laundromat.jpg";
+import { contactInfo } from "@/data/contact";
 
 const HeroSection = () => {
   return (
@@ -29,7 +30,7 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 mb-4">
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+              href={contactInfo.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-6 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
@@ -38,16 +39,16 @@ const HeroSection = () => {
               Get Directions
             </a>
             <a
-              href="tel:2707687058"
+              href={contactInfo.phoneHref}
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
             >
               <Phone size={18} />
-              Call 270-768-7058
+              Call {contactInfo.phoneFormatted}
             </a>
           </div>
 
           <p className="text-sm text-primary-foreground/60">
-            Open Every Day · Wash &amp; Fold Service Available
+            {contactInfo.hours} · Wash &amp; Fold Service Available
           </p>
         </div>
       </div>

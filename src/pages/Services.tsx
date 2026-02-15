@@ -1,9 +1,18 @@
 import { MapPin, Phone, WashingMachine, HandHelping, Bed, CreditCard, Clock, Sparkles, Maximize } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/hero-laundromat.jpg";
 import selfServiceImage from "@/assets/self-service-machines.jpg";
 import washFoldImage from "@/assets/wash-fold-laundry.jpg";
+import comforterImage from "@/assets/comforter-machines.jpg";
+import { contactInfo } from "@/data/contact";
+import { selfServiceFeatures, washFoldPricing } from "@/data/services";
+
+const featureIconMap: Record<string, LucideIcon> = {
+  Maximize,
+  Sparkles,
+  Clock,
+};
 
 const Services = () => {
   return (
@@ -34,17 +43,15 @@ const Services = () => {
               system, there is no need for coins — load your card and start your cycle.
             </p>
             <ul className="space-y-3 mb-10">
-              {[
-                { icon: Maximize, text: "Multiple washer and dryer sizes" },
-                { icon: Sparkles, text: "Clean, well-maintained equipment" },
-                { icon: Maximize, text: "Spacious folding tables" },
-                { icon: Clock, text: "Open daily for your convenience" },
-              ].map((item) => (
-                <li key={item.text} className="flex items-center gap-3 text-foreground/80">
-                  <item.icon size={18} className="text-primary shrink-0" />
-                  <span>{item.text}</span>
-                </li>
-              ))}
+              {selfServiceFeatures.map((feature) => {
+                const Icon = featureIconMap[feature.icon] ?? Maximize;
+                return (
+                  <li key={feature.text} className="flex items-center gap-3 text-foreground/80">
+                    <Icon size={18} className="text-primary shrink-0" />
+                    <span>{feature.text}</span>
+                  </li>
+                );
+              })}
             </ul>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
@@ -91,17 +98,10 @@ const Services = () => {
                     <CreditCard size={20} className="text-primary" />
                     <h3 className="text-lg font-semibold text-primary">Wash &amp; Fold Pricing</h3>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-5">$15 minimum on all Wash &amp; Fold orders.</p>
+                  <p className="text-muted-foreground text-sm mb-5">{washFoldPricing.minimum}</p>
 
                   <ul className="space-y-3 text-foreground/80">
-                    {[
-                      ["Clothing", "$1.50 per pound"],
-                      ["Twin/Full Comforter", "$15 each"],
-                      ["Queen Comforter", "$20 each"],
-                      ["King Comforter", "$25 each"],
-                      ["Small Pillow", "$5 each"],
-                      ["Large Pillow", "$10 each"],
-                    ].map(([item, price]) => (
+                    {washFoldPricing.items.map(({ item, price }) => (
                       <li
                         key={item}
                         className="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0"
@@ -113,8 +113,7 @@ const Services = () => {
                   </ul>
 
                   <p className="text-muted-foreground text-xs mt-5 leading-relaxed">
-                    Detergent options available: Tide, Gain, and All Free &amp; Clear. Optional dryer sheet and bleach
-                    available upon request.
+                    {washFoldPricing.detergentOptions} {washFoldPricing.additionalOptions}
                   </p>
                 </div>
               </div>
@@ -140,7 +139,7 @@ const Services = () => {
                 alt="Clean laundry equipment at The Washboard laundromat"
                 className="w-full h-64 md:h-80 object-cover object-[center_calc(50%+100px)]"
                 loading="lazy"
-                src="/lovable-uploads/e24166d3-0aea-4e4c-8f03-a3cea4d293e5.jpg"
+                src={comforterImage}
               />
             </div>
           </div>
@@ -154,14 +153,14 @@ const Services = () => {
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
-                href="tel:2707687058"
+                href={contactInfo.phoneHref}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
               >
                 <Phone size={18} />
-                Call 270-768-7058
+                Call {contactInfo.phoneFormatted}
               </a>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
+                href={contactInfo.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
