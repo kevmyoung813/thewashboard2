@@ -55,11 +55,11 @@ const Header = () => {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
-            renderLink(link, "font-heading uppercase tracking-wide text-sm font-medium text-foreground hover:text-primary transition-colors")
+            renderLink(link, "font-heading uppercase tracking-wide text-base font-medium text-foreground hover:text-primary transition-colors")
           )}
           <a
             href={contactInfo.phoneHref}
-            className="font-heading uppercase tracking-wide text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="font-heading uppercase tracking-wide text-base font-medium text-foreground hover:text-primary transition-colors"
           >
             Contact
           </a>
@@ -67,7 +67,7 @@ const Header = () => {
             href={contactInfo.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-heading uppercase tracking-wide inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+            className="font-heading uppercase tracking-wide inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
             <MapPin size={16} />
             Get Directions
@@ -101,7 +101,7 @@ const Header = () => {
               href={contactInfo.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-heading uppercase tracking-wide inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground mt-2"
+              className="font-heading uppercase tracking-wide inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground mt-2"
             >
               <MapPin size={16} />
               Get Directions

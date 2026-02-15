@@ -62,6 +62,8 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -77,6 +79,7 @@
   a[class*="rounded-full"][class*="bg-primary-foreground"],
   a[class*="rounded-full"][class*="border-2"] {
     font-family: var(--font-heading);
+    font-size: 0.9375rem;
     text-transform: uppercase;
     letter-spacing: 0.025em;
   }
