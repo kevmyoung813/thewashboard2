@@ -55,7 +55,7 @@ const Footer = () => {
               270-768-7058
             </a>
             <a
-              href="https://maps.google.com/?q=605+S+12th+St+Murray+KY"
+              href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
