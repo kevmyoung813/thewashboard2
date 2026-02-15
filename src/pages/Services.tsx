@@ -132,8 +132,8 @@ const Services = () => {
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
 
-                alt="Clean laundry equipment at The Washboard laundromat"
-                className="w-full h-64 md:h-80 object-cover"
+                 alt="Clean laundry equipment at The Washboard laundromat"
+                 className="w-full h-64 md:h-80 object-cover object-[center_calc(50%+50px)]"
                 loading="lazy" src="/lovable-uploads/e24166d3-0aea-4e4c-8f03-a3cea4d293e5.jpg" />
 
             </div>
