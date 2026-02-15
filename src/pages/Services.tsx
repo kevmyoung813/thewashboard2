@@ -13,9 +13,7 @@ const Services = () => {
         {/* Hero */}
         <section className="py-20 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-8 text-center max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Laundry Services in Murray, KY
-            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Laundry Services in Murray, KY</h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Modern machines. Customer-first service. Convenient options for every household.
             </p>
@@ -32,28 +30,29 @@ const Services = () => {
               <h2 className="text-2xl md:text-3xl font-bold">Self-Service Laundry</h2>
             </div>
             <p className="text-foreground/80 text-lg leading-relaxed mb-6 max-w-2xl">
-              Our modern washers and dryers are designed for simplicity and efficiency. With our reloadable laundry card system, there is no need for coins — load your card and start your cycle.
+              Our modern washers and dryers are designed for simplicity and efficiency. With our reloadable laundry card
+              system, there is no need for coins — load your card and start your cycle.
             </p>
             <ul className="space-y-3 mb-10">
               {[
-              { icon: Maximize, text: "Multiple washer and dryer sizes" },
-              { icon: Sparkles, text: "Clean, well-maintained equipment" },
-              { icon: Maximize, text: "Spacious folding tables" },
-              { icon: Clock, text: "Open daily for your convenience" }].
-              map((item) =>
-              <li key={item.text} className="flex items-center gap-3 text-foreground/80">
+                { icon: Maximize, text: "Multiple washer and dryer sizes" },
+                { icon: Sparkles, text: "Clean, well-maintained equipment" },
+                { icon: Maximize, text: "Spacious folding tables" },
+                { icon: Clock, text: "Open daily for your convenience" },
+              ].map((item) => (
+                <li key={item.text} className="flex items-center gap-3 text-foreground/80">
                   <item.icon size={18} className="text-primary shrink-0" />
                   <span>{item.text}</span>
                 </li>
-              )}
+              ))}
             </ul>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={selfServiceImage}
                 alt="Folded laundry and modern washing machines at The Washboard in Murray, KY"
                 className="w-full h-64 md:h-80 object-cover"
-                loading="lazy" />
-
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
@@ -68,8 +67,8 @@ const Services = () => {
                   src={washFoldImage}
                   alt="Neatly folded laundry at The Washboard"
                   className="w-full h-full object-cover"
-                  loading="lazy" />
-
+                  loading="lazy"
+                />
               </div>
 
               {/* Text */}
@@ -81,7 +80,9 @@ const Services = () => {
                   <h2 className="text-2xl md:text-3xl font-bold">Wash &amp; Fold Service</h2>
                 </div>
                 <p className="text-foreground/80 text-lg leading-relaxed mb-8">
-                  When time is limited, drop off your laundry and let our team handle the washing, drying, and folding. Your items are returned fresh, neatly folded, and ready to put away — ideal for Murray State students and families throughout Calloway County.
+                  When time is limited, drop off your laundry and let our team handle the washing, drying, and folding.
+                  Your items are returned fresh, neatly folded, and ready to put away — ideal for Murray State students
+                  and families throughout Calloway County.
                 </p>
 
                 {/* Pricing Card */}
@@ -94,22 +95,26 @@ const Services = () => {
 
                   <ul className="space-y-3 text-foreground/80">
                     {[
-                    ["Clothing", "$1.50 per pound"],
-                    ["Twin/Full Comforter", "$15 each"],
-                    ["Queen Comforter", "$20 each"],
-                    ["King Comforter", "$25 each"],
-                    ["Small Pillow", "$5 each"],
-                    ["Large Pillow", "$10 each"]].
-                    map(([item, price]) =>
-                    <li key={item} className="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0">
+                      ["Clothing", "$1.50 per pound"],
+                      ["Twin/Full Comforter", "$15 each"],
+                      ["Queen Comforter", "$20 each"],
+                      ["King Comforter", "$25 each"],
+                      ["Small Pillow", "$5 each"],
+                      ["Large Pillow", "$10 each"],
+                    ].map(([item, price]) => (
+                      <li
+                        key={item}
+                        className="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0"
+                      >
                         <span>{item}</span>
                         <span className="font-semibold text-primary">{price}</span>
                       </li>
-                    )}
+                    ))}
                   </ul>
 
                   <p className="text-muted-foreground text-xs mt-5 leading-relaxed">
-                    Detergent options available: Tide, Gain, and All Free &amp; Clear. Optional dryer sheet and bleach available upon request.
+                    Detergent options available: Tide, Gain, and All Free &amp; Clear. Optional dryer sheet and bleach
+                    available upon request.
                   </p>
                 </div>
               </div>
@@ -127,15 +132,16 @@ const Services = () => {
               <h2 className="text-2xl md:text-3xl font-bold">Comforters &amp; Specialty Items</h2>
             </div>
             <p className="text-foreground/80 text-lg leading-relaxed mb-10 max-w-2xl">
-              We handle large bedding and select specialty items with care. Visit our Murray, KY location to speak with our team about your specific needs.
+              We handle large bedding and select specialty items with care. Visit our Murray, KY location to speak with
+              our team about your specific needs.
             </p>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
-
-                 alt="Clean laundry equipment at The Washboard laundromat"
-                 className="w-full h-64 md:h-80 object-cover object-[center_calc(50%+50px)]"
-                loading="lazy" src="/lovable-uploads/e24166d3-0aea-4e4c-8f03-a3cea4d293e5.jpg" />
-
+                alt="Clean laundry equipment at The Washboard laundromat"
+                className="w-full h-64 md:h-80 object-cover object-[center_calc(50%+100px)]"
+                loading="lazy"
+                src="/lovable-uploads/e24166d3-0aea-4e4c-8f03-a3cea4d293e5.jpg"
+              />
             </div>
           </div>
         </section>
@@ -149,8 +155,8 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
                 href="tel:2707687058"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity">
-
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
+              >
                 <Phone size={18} />
                 Call 270-768-7058
               </a>
@@ -158,8 +164,8 @@ const Services = () => {
                 href="https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
-
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+              >
                 <MapPin size={18} />
                 Get Directions
               </a>
@@ -168,8 +174,8 @@ const Services = () => {
         </section>
       </main>
       <Footer />
-    </div>);
-
+    </div>
+  );
 };
 
 export default Services;
