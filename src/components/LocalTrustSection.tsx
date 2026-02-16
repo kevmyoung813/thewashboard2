@@ -1,5 +1,6 @@
-import { Heart } from "lucide-react";
+import { Heart, MapPin, Phone } from "lucide-react";
 import murrayInterior from "@/assets/murray-interior.jpg";
+import { contactInfo } from "@/data/contact";
 
 const LocalTrustSection = () => {
   return (
@@ -13,9 +14,27 @@ const LocalTrustSection = () => {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               Serving Murray with Care
             </h2>
-            <p className="text-foreground/80 leading-relaxed text-lg">
+            <p className="text-foreground/80 leading-relaxed text-lg mb-8">
               The Washboard is part of the Murray community. Whether you are a local family, a Murray State student, or new to town, we are here to make laundry simple and dependable — right here in Calloway County.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <a
+                href={contactInfo.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+              >
+                <MapPin size={18} />
+                Get Directions
+              </a>
+              <a
+                href={contactInfo.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Phone size={18} />
+                Call {contactInfo.phoneFormatted}
+              </a>
+            </div>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img

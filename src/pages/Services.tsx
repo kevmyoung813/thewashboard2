@@ -23,9 +23,27 @@ const Services = () => {
         <section className="py-20 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-8 text-center max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Laundry Services in Murray, KY</h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">
               Modern machines. Customer-first service. Convenient options for every household.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={contactInfo.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+              >
+                <MapPin size={18} />
+                Get Directions
+              </a>
+              <a
+                href={contactInfo.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Phone size={18} />
+                Call {contactInfo.phoneFormatted}
+              </a>
+            </div>
           </div>
         </section>
 

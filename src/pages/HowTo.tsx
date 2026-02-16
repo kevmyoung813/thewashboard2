@@ -1,4 +1,4 @@
-import { WashingMachine, Wind, CreditCard } from "lucide-react";
+import { WashingMachine, Wind, CreditCard, MapPin, Phone } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { howToServiceBoxes, faqs } from "@/data/howto";
+import { contactInfo } from "@/data/contact";
 
 const iconMap: Record<string, LucideIcon> = {
   WashingMachine,
@@ -32,10 +33,28 @@ const HowTo = () => {
               Step-by-step instructions to help make your visit to The
               Washboard simple and straightforward.
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-8">
               Serving customers throughout Murray, KY with modern, easy-to-use
               equipment.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={contactInfo.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+              >
+                <MapPin size={18} />
+                Get Directions
+              </a>
+              <a
+                href={contactInfo.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Phone size={18} />
+                Call {contactInfo.phoneFormatted}
+              </a>
+            </div>
           </div>
         </section>
 

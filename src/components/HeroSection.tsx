@@ -18,7 +18,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto px-4 md:px-8 py-20 md:py-32">
         <div className="max-w-2xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight !text-primary-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight !text-primary-foreground mb-6">
             Murray's Friendly Neighborhood Laundromat
           </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 font-medium mb-2">

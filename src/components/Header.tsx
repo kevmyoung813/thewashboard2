@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X, MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, MapPin, Phone, Clock } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 import { navLinks } from "@/data/navigation";
@@ -8,6 +8,12 @@ import { contactInfo } from "@/data/contact";
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -84,29 +90,56 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Fullscreen mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-background px-4 pb-4">
-          <nav className="flex flex-col gap-3 pt-3">
+        <div className="fixed inset-0 top-[4.5rem] z-40 bg-background md:hidden flex flex-col overflow-y-auto">
+          {/* Nav links */}
+          <nav className="flex flex-col gap-1 px-6 pt-6">
             {navLinks.map((link) =>
-              renderLink(link, "font-heading uppercase tracking-wide text-base font-medium text-foreground hover:text-primary py-2")
+              renderLink(
+                link,
+                "font-heading uppercase tracking-wide text-lg font-medium text-foreground hover:text-primary py-3 border-b border-border/50"
+              )
             )}
-            <a
-              href={contactInfo.phoneHref}
-              className="font-heading uppercase tracking-wide text-base font-medium text-foreground hover:text-primary py-2"
-            >
-              Contact
-            </a>
+          </nav>
+
+          {/* Contact info + CTA buttons at bottom */}
+          <div className="mt-auto px-6 pb-8 pt-6 border-t border-border">
+            <div className="flex items-start gap-3 mb-4">
+              <MapPin className="text-primary shrink-0 mt-0.5" size={20} />
+              <span className="text-foreground/80">{contactInfo.address.formatted}</span>
+            </div>
+            <div className="flex items-center gap-3 mb-4">
+              <Phone className="text-primary shrink-0" size={20} />
+              <a
+                href={contactInfo.phoneHref}
+                className="text-foreground/80 hover:text-primary transition-colors"
+              >
+                {contactInfo.phoneFormatted}
+              </a>
+            </div>
+            <div className="flex items-center gap-3 mb-8">
+              <Clock className="text-primary shrink-0" size={20} />
+              <span className="text-foreground/80">{contactInfo.hours}</span>
+            </div>
+
             <a
               href={contactInfo.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-heading uppercase tracking-wide inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground mt-2"
+              className="font-heading uppercase tracking-wide inline-flex items-center justify-center gap-2 rounded-full bg-primary w-full py-4 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity mb-3"
             >
-              <MapPin size={16} />
+              <MapPin size={18} />
               Get Directions
             </a>
-          </nav>
+            <a
+              href={contactInfo.phoneHref}
+              className="font-heading uppercase tracking-wide inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary w-full py-4 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <Phone size={18} />
+              Call {contactInfo.phoneFormatted}
+            </a>
+          </div>
         </div>
       )}
     </header>
