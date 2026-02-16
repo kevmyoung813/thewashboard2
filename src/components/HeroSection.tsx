@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MapPin, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-laundromat.jpg";
 import { contactInfo } from "@/data/contact";
@@ -48,7 +49,10 @@ const HeroSection = () => {
           </div>
 
           <p className="text-sm text-primary-foreground/60">
-            {contactInfo.hours} · Wash &amp; Fold Service Available
+            {contactInfo.hours} ·{" "}
+            <Link to="/services" className="hover:underline">
+              Wash &amp; Fold Service Available
+            </Link>
           </p>
         </div>
       </div>

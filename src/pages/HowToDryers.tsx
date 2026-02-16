@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { Wind, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -6,6 +7,12 @@ import { dryerSteps, dryerTip } from "@/data/howto";
 import { contactInfo } from "@/data/contact";
 
 const HowToDryers = () => {
+  usePageMeta({
+    title: "How to Use the Dryers - The Washboard Murray KY",
+    description:
+      "Step-by-step dryer instructions at The Washboard laundromat in Murray, KY. Get the best results from our modern dryers.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

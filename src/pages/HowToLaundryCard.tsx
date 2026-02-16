@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { CreditCard, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -6,6 +7,12 @@ import { laundryCardSteps, laundryCardTip } from "@/data/howto";
 import { contactInfo } from "@/data/contact";
 
 const HowToLaundryCard = () => {
+  usePageMeta({
+    title: "Laundry Card System Guide - The Washboard Murray KY",
+    description:
+      "How to use our reloadable laundry card system at The Washboard in Murray, KY. No coins needed — simple and convenient.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

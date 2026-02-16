@@ -1,9 +1,16 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ShieldCheck } from "lucide-react";
 import { ruleSections } from "@/data/rules";
 
 const Rules = () => {
+  usePageMeta({
+    title: "Store Guidelines & Policies - The Washboard Murray KY",
+    description:
+      "Store guidelines and policies at The Washboard laundromat in Murray, KY. Keeping our space clean, safe, and comfortable for everyone.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

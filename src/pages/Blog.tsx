@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,6 +7,12 @@ import { blogPosts } from "@/data/blogPosts";
 import BlogCard from "@/components/BlogCard";
 
 const Blog = () => {
+  usePageMeta({
+    title: "Laundry Tips & Updates - The Washboard Murray KY",
+    description:
+      "Helpful laundry guidance for Murray State students and Calloway County families. Local tips from your neighborhood laundromat.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,6 +10,16 @@ import NotFound from "./NotFound";
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
+
+  usePageMeta({
+    title: post
+      ? `${post.title} | The Washboard Murray KY`
+      : "Blog Post Not Found | The Washboard",
+    description: post
+      ? post.excerpt
+      : "The requested blog post could not be found.",
+    ogType: post ? "article" : "website",
+  });
 
   if (!post) return <NotFound />;
 

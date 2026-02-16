@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Heart, MapPin, Phone } from "lucide-react";
 import murrayInterior from "@/assets/murray-interior.jpg";
 import { contactInfo } from "@/data/contact";
@@ -15,7 +16,9 @@ const LocalTrustSection = () => {
               Serving Murray with Care
             </h2>
             <p className="text-foreground/80 leading-relaxed text-lg mb-8">
-              The Washboard is part of the Murray community. Whether you are a local family, a Murray State student, or new to town, we are here to make laundry simple and dependable — right here in Calloway County.
+              The Washboard is part of the Murray community. Whether you are a local family, a{" "}
+              <Link to="/how-to" className="text-primary hover:underline font-medium">Murray State student</Link>
+              , or new to town, we are here to make laundry simple and dependable — right here in Calloway County.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
               <a

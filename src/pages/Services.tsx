@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { MapPin, Phone, WashingMachine, HandHelping, Bed, CreditCard, Clock, Sparkles, Maximize } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
@@ -15,6 +16,12 @@ const featureIconMap: Record<string, LucideIcon> = {
 };
 
 const Services = () => {
+  usePageMeta({
+    title: "Laundry Services Murray KY - Self-Service & Wash and Fold | The Washboard",
+    description:
+      "Self-service laundry and wash & fold in Murray, Kentucky. Modern machines, reloadable laundry cards, convenient for Murray State students and families.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -90,7 +97,7 @@ const Services = () => {
               <div className="rounded-2xl overflow-hidden shadow-lg order-first md:order-last">
                 <img
                   src={washFoldImage}
-                  alt="Neatly folded laundry at The Washboard"
+                  alt="Neatly folded laundry from wash and fold service at The Washboard in Murray, KY"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -154,7 +161,7 @@ const Services = () => {
             </p>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
-                alt="Clean laundry equipment at The Washboard laundromat"
+                alt="Large capacity washers for comforters and bedding at The Washboard laundromat in Murray, KY"
                 className="w-full h-64 md:h-80 object-cover object-[center_calc(50%+100px)]"
                 loading="lazy"
                 src={comforterImage}

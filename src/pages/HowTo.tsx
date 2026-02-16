@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { WashingMachine, Wind, CreditCard, MapPin, Phone } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -19,6 +20,12 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const HowTo = () => {
+  usePageMeta({
+    title: "How to Use Our Laundromat - Murray, KY | The Washboard",
+    description:
+      "Easy laundry card system, modern washers & dryers. Located near Murray State University in Calloway County.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

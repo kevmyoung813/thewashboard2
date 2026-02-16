@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -11,6 +12,12 @@ import CtaBand from "@/components/CtaBand";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  usePageMeta({
+    title: "The Washboard - Laundromat in Murray, KY | Wash & Fold Service",
+    description:
+      "Clean, modern laundromat serving Murray, KY and Murray State. Self-service laundry, wash & fold, and comfortable space. Open every day.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

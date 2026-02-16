@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { WashingMachine, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -6,6 +7,12 @@ import { washerSteps, washerTip } from "@/data/howto";
 import { contactInfo } from "@/data/contact";
 
 const HowToWashers = () => {
+  usePageMeta({
+    title: "How to Use the Washers - The Washboard Murray KY",
+    description:
+      "Step-by-step washer instructions at The Washboard laundromat in Murray, KY. Easy-to-follow guide for self-service laundry.",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
