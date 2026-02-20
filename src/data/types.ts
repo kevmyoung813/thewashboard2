@@ -40,6 +40,11 @@ export interface WashFoldPricing {
   additionalOptions: string;
 }
 
+export interface SelfServicePricing {
+  items: PricingItem[];
+  note: string;
+}
+
 export interface FAQ {
   q: string;
   a: string;

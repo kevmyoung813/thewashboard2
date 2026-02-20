@@ -15,7 +15,7 @@ export const contactInfo: ContactInfo = {
     "https://www.google.com/maps/dir/?api=1&destination=605+S+12th+St+Murray+KY+42071",
   googleMapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.0!2d-88.3157!3d36.6035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x887b2e1e1e1e1e1e%3A0x0!2s605+S+12th+St%2C+Murray%2C+KY+42071!5e0!3m2!1sen!1sus!4v1700000000000",
-  hours: "Open Every Day",
+  hours: "Open Every Day \u00B7 6am\u201311pm",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61565420489122",
   },

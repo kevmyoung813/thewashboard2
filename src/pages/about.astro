@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { contactInfo } from "@/data/contact";
+import CtaBand from "@/components/CtaBand.astro";
+---
+
+<BaseLayout
+  title="About The Washboard | Laundromat in Murray, KY"
+  description="Learn about The Washboard, Murray, KY's neighborhood laundromat. Modern machines, Wash & Fold service, and a welcoming space for the whole community."
+>
+  <!-- Hero -->
+  <section class="py-20 md:py-28 bg-background">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl text-center">
+      <div class="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mx-auto mb-5">
+        <Icon name="lucide:heart" width={28} height={28} class="text-primary" />
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        About The Washboard
+      </h1>
+      <p class="text-lg text-muted-foreground mb-8">
+        Murray, KY's neighborhood laundromat — built around clean machines, genuine care, and a welcoming space for everyone.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href={contactInfo.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+        >
+          <Icon name="lucide:map-pin" width={18} height={18} />
+          Get Directions
+        </a>
+        <a
+          href={contactInfo.phoneHref}
+          class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+        >
+          <Icon name="lucide:phone" width={18} height={18} />
+          Call {contactInfo.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="pb-20 md:pb-28 bg-background">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl text-foreground/80 text-lg leading-relaxed">
+      <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">Locally Owned and Operated</h2>
+      <p class="mb-8">
+        The Washboard is a locally owned and operated laundromat located at {contactInfo.address.formatted}. We opened our doors with a simple goal: to give the Murray community a clean, comfortable, and dependable place to do laundry. From day one, that mission has guided everything we do — from the equipment we choose to the way we care for our space.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">Serving Students, Families, and Professionals</h2>
+      <p class="mb-8">
+        We proudly serve families, working professionals, and Murray State University students throughout Murray and Calloway County. Whether you stop in for a quick self-service load or take advantage of our <a href="/services" class="text-primary hover:underline font-medium">Wash &amp; Fold service</a>, our goal is to make laundry feel simple and stress-free. We know your time matters, and we work hard to earn it every visit.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">A Modern, Comfortable Facility</h2>
+      <p class="mb-8">
+        What sets The Washboard apart is the experience. Our facility features modern, well-maintained washers and dryers in multiple sizes, a coin-free <a href="/how-to/laundry-card" class="text-primary hover:underline font-medium">reloadable laundry card system</a>, spacious folding areas, and a bright, welcoming atmosphere. We keep our space clean throughout the day and maintain our machines regularly so you can count on reliable results every time.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">Part of the Murray Community</h2>
+      <p>
+        At the heart of it, The Washboard is about community. We're proud to be part of Murray, and we're grateful for the families, students, and neighbors who make this place what it is. If you haven't visited yet, we'd love to welcome you. Stop by, say hello, and see why our customers keep coming back.
+      </p>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

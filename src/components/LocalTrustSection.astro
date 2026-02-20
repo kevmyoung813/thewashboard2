@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+import murrayInterior from "@/assets/murray-interior.jpg";
+import { contactInfo } from "@/data/contact";
+---
+
+<section class="py-20 md:py-28 bg-warm">
+  <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="text-center md:text-left">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-6">
+          <Icon name="lucide:heart" width={28} height={28} class="text-primary" />
+        </div>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+          Serving Murray with Care
+        </h2>
+        <p class="text-foreground/80 leading-relaxed text-lg mb-4">
+          The Washboard is part of the Murray community. Whether you are a local family, a Murray State student, or new to town, we are here to make laundry simple and dependable — right here in Calloway County.
+        </p>
+        <p class="text-foreground/80 leading-relaxed text-lg mb-8">
+          <a href="/services" class="text-primary hover:underline font-medium">Explore our services</a> to see how we can help simplify your laundry routine.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+          <a
+            href={contactInfo.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            <Icon name="lucide:map-pin" width={18} height={18} />
+            Get Directions
+          </a>
+          <a
+            href={contactInfo.phoneHref}
+            class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <Icon name="lucide:phone" width={18} height={18} />
+            Call {contactInfo.phoneFormatted}
+          </a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src={murrayInterior.src}
+          alt="Inside The Washboard laundromat in Murray, KY — spacious seating and modern washers"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

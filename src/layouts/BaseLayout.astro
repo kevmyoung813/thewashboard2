@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: string;
+  ogImage?: string;
+  schema?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogType = "website",
+  ogImage = "/og-image.jpg",
+  schema,
+} = Astro.props;
+
+const siteUrl = "https://washboardmurray.com";
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
+const isHome = Astro.url.pathname === "/";
+
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import "@/index.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="The Washboard" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {isHome && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Laundromat",
+        "name": "The Washboard",
+        "description": "Clean, modern laundromat serving Murray, KY and Murray State University. Self-service laundry, wash & fold, and comfortable space.",
+        "url": "https://washboardmurray.com",
+        "telephone": "270-768-7058",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "605 S. 12th St",
+          "addressLocality": "Murray",
+          "addressRegion": "KY",
+          "postalCode": "42071",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.6035",
+          "longitude": "-88.3157"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "06:00",
+          "closes": "23:00"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Murray", "containedInPlace": { "@type": "State", "name": "Kentucky" } },
+          { "@type": "AdministrativeArea", "name": "Calloway County" },
+          { "@type": "EducationalOrganization", "name": "Murray State University" }
+        ],
+        "paymentAccepted": "Laundry Card",
+        "currenciesAccepted": "USD",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Laundry Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Self-Service Laundry", "description": "Modern washers and dryers with reloadable laundry card system" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wash & Fold Service", "description": "Drop-off laundry service with washing, drying, and folding" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Comforters & Specialty Items", "description": "Large bedding and specialty items handled with care" } }
+          ]
+        },
+        "priceRange": "$",
+        "sameAs": ["https://www.facebook.com/profile.php?id=61565420489122"]
+      })} />
+    )}
+
+    {schema && !isHome && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+  </head>
+  <body>
+    <div class="min-h-screen bg-background">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

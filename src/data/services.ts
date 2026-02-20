@@ -1,6 +1,7 @@
 import type {
   ServiceOffering,
   SelfServiceFeature,
+  SelfServicePricing,
   WashFoldPricing,
 } from "./types";
 
@@ -31,6 +32,16 @@ export const selfServiceFeatures: SelfServiceFeature[] = [
   { icon: "Maximize", text: "Spacious folding tables" },
   { icon: "Clock", text: "Open daily for your convenience" },
 ];
+
+export const selfServicePricing: SelfServicePricing = {
+  items: [
+    { item: "Small Washer", price: "$2.50" },
+    { item: "Medium Washer", price: "$3.50" },
+    { item: "Large Washer", price: "$4.50" },
+    { item: "Dryer (per 8 min)", price: "$0.25" },
+  ],
+  note: "Prices are subject to change.",
+};
 
 export const washFoldPricing: WashFoldPricing = {
   minimum: "$15 minimum on all Wash & Fold orders.",

@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ruleSections } from "@/data/rules";
+---
+
+<BaseLayout
+  title="Store Guidelines & Policies - The Washboard Murray KY"
+  description="Store guidelines and policies at The Washboard laundromat in Murray, KY. Keeping our space clean, safe, and comfortable for everyone."
+>
+  <!-- Hero -->
+  <section class="py-20 md:py-28 bg-background">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl text-center">
+      <div class="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mx-auto mb-5">
+        <Icon name="lucide:shield-check" width={28} height={28} class="text-primary" />
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        Store Guidelines &amp; Policies
+      </h1>
+      <p class="text-lg text-muted-foreground mb-2">
+        To keep The Washboard clean, safe, and comfortable for everyone in Murray, KY, we ask all customers to follow the guidelines below.
+      </p>
+      <p class="text-base text-muted-foreground">
+        We appreciate your cooperation and thank you for choosing The Washboard.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sections -->
+  <section class="pb-20 md:pb-28 bg-background">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl space-y-8">
+      {ruleSections.map((section) => (
+        <div class="bg-secondary rounded-2xl border border-border shadow-sm p-6 md:p-8">
+          <h2 class="text-xl md:text-2xl font-bold mb-3">
+            {section.title}
+          </h2>
+          <div class="h-px bg-border mb-5"></div>
+          {section.intro && (
+            <p class="text-muted-foreground mb-4 leading-relaxed">
+              {section.intro}
+            </p>
+          )}
+          <ul class="space-y-3">
+            {section.items.map((item) => (
+              <li class="flex gap-3 text-[0.95rem] md:text-base leading-relaxed text-foreground">
+                <span class="text-primary mt-1.5 shrink-0">&bull;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

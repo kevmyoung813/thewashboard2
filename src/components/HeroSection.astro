@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import heroImage from "@/assets/hero-laundromat.jpg";
+import { contactInfo } from "@/data/contact";
+---
+
+<section id="home" class="relative min-h-[85vh] flex items-center">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src={heroImage.src}
+      alt="Clean, modern laundromat interior at The Washboard in Murray, KY"
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-primary/70"></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-4 md:px-8 py-20 md:py-32">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight !text-primary-foreground mb-6">
+        Murray, KY's Friendly Neighborhood Laundromat
+      </h1>
+      <p class="text-lg md:text-xl text-primary-foreground/90 font-medium mb-2">
+        Clean machines. Comfortable space. Genuine customer care.
+      </p>
+      <p class="text-base md:text-lg text-primary-foreground/75 mb-8">
+        Serving the Murray, KY community with a dependable laundry experience.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <a
+          href={contactInfo.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-6 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
+        >
+          <Icon name="lucide:map-pin" width={18} height={18} />
+          Get Directions
+        </a>
+        <a
+          href={contactInfo.phoneHref}
+          class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+        >
+          <Icon name="lucide:phone" width={18} height={18} />
+          Call {contactInfo.phoneFormatted}
+        </a>
+      </div>
+
+      <p class="text-sm text-primary-foreground/60">
+        {contactInfo.hours} &middot;{" "}
+        <a href="/services" class="hover:underline">
+          Wash &amp; Fold Service Available
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

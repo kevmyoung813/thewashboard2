@@ -1,0 +1,126 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { blogPosts } from "@/data/blogPosts";
+import type { BlogPost } from "@/data/blogPosts";
+import { contactInfo } from "@/data/contact";
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const blocks = post.content.split("\n\n");
+const fullTitle = `${post.title} | The Washboard`;
+const pageTitle = fullTitle.length <= 60 ? fullTitle : post.title;
+
+function parseInlineLinks(text: string): string {
+  const escaped = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  return escaped.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" class="text-primary hover:underline font-medium">$1</a>'
+  );
+}
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={post.excerpt}
+  ogType="article"
+>
+  <article class="py-16 md:py-20">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl">
+      <a
+        href="/blog"
+        class="text-sm text-muted-foreground hover:text-primary transition-colors mb-8 inline-block"
+      >
+        &larr; Back to Blog
+      </a>
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+        {post.title}
+      </h1>
+      <p class="text-sm text-muted-foreground mb-10">{formattedDate}</p>
+
+      <!-- Rendered markdown-like content -->
+      <div class="prose-washboard">
+        {blocks.map((block) => {
+          if (block.startsWith("## ")) {
+            return (
+              <h2 class="text-xl md:text-2xl font-bold mt-10 mb-4">
+                {block.replace("## ", "")}
+              </h2>
+            );
+          }
+          if (block.startsWith("- ")) {
+            const items = block.split("\n").filter((l) => l.startsWith("- "));
+            return (
+              <ul class="list-disc list-inside space-y-1 mb-6 text-foreground/80 leading-relaxed">
+                {items.map((item) => (
+                  <li set:html={parseInlineLinks(item.replace("- ", ""))} />
+                ))}
+              </ul>
+            );
+          }
+          if (/^\d+\.\s/.test(block)) {
+            const items = block.split("\n").filter((l) => /^\d+\.\s/.test(l));
+            return (
+              <ol class="list-decimal list-inside space-y-1 mb-6 text-foreground/80 leading-relaxed">
+                {items.map((item) => (
+                  <li set:html={parseInlineLinks(item.replace(/^\d+\.\s/, ""))} />
+                ))}
+              </ol>
+            );
+          }
+          return (
+            <p class="text-foreground/80 leading-relaxed mb-6" set:html={parseInlineLinks(block)} />
+          );
+        })}
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA Band -->
+  <section class="py-16 md:py-20 bg-primary">
+    <div class="container mx-auto px-4 md:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold !text-primary-foreground mb-8">
+        Need Help With Your Laundry?
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={contactInfo.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
+        >
+          <Icon name="lucide:map-pin" width={18} height={18} />
+          Get Directions
+        </a>
+        <a
+          href={contactInfo.phoneHref}
+          class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+        >
+          <Icon name="lucide:phone" width={18} height={18} />
+          Call {contactInfo.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
