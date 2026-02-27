@@ -35,10 +35,12 @@ export const selfServiceFeatures: SelfServiceFeature[] = [
 
 export const selfServicePricing: SelfServicePricing = {
   items: [
-    { item: "Small Washer", price: "$2.50" },
-    { item: "Medium Washer", price: "$3.50" },
-    { item: "Large Washer", price: "$4.50" },
-    { item: "Dryer (per 8 min)", price: "$0.25" },
+    { item: "Small Washer", price: "$4.50" },
+    { item: "Medium Washer", price: "$6.00" },
+    { item: "Large Washer", price: "$7.50" },
+    { item: "Extra Large Washer", price: "$9.50" },
+    { item: "Small Dryer (per 7 min)", price: "$0.25" },
+    { item: "Large Dryer (per 10 min)", price: "$1.00" },
   ],
   note: "Prices are subject to change.",
 };

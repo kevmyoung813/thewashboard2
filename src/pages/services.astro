@@ -102,54 +102,53 @@ const serviceSchema: Record<string, unknown> = {
 
   <!-- Self-Service Laundry -->
   <section class="py-16 md:py-24 bg-warm">
-    <div class="container mx-auto px-4 md:px-8 max-w-4xl">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent">
-          <Icon name="lucide:washing-machine" width={24} height={24} class="text-primary" />
+    <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+      <div class="grid md:grid-cols-2 gap-10 items-stretch">
+        <!-- Image - shows first on mobile -->
+        <div class="rounded-2xl overflow-hidden shadow-lg order-first md:order-last">
+          <img
+            src={selfServiceImage.src}
+            alt="Modern washing machines at The Washboard laundromat in Murray, KY"
+            class="w-full h-full object-cover object-top"
+            loading="lazy"
+          />
         </div>
-        <h2 class="text-2xl md:text-3xl font-bold">Self-Service Laundry</h2>
-      </div>
-      <p class="text-foreground/80 text-lg leading-relaxed mb-6 max-w-2xl">
-        Our modern washers and dryers are designed for simplicity and efficiency. With our reloadable laundry card
-        system, there is no need for coins — load your card and start your cycle.
-      </p>
-      <ul class="space-y-3 mb-10">
-        {selfServiceFeatures.map((feature) => (
-          <li class="flex items-center gap-3 text-foreground/80">
-            <Icon name={featureIconMap[feature.icon] ?? "lucide:maximize"} width={18} height={18} class="text-primary shrink-0" />
-            <span>{feature.text}</span>
-          </li>
-        ))}
-      </ul>
-      <div class="rounded-2xl overflow-hidden shadow-lg mb-10">
-        <img
-          src={selfServiceImage.src}
-          alt="Folded laundry and modern washing machines at The Washboard in Murray, KY"
-          class="w-full h-64 md:h-80 object-cover"
-          loading="lazy"
-        />
-      </div>
 
-      <!-- Self-Service Pricing Card -->
-      <div class="bg-card rounded-2xl border border-border shadow-sm p-6 md:p-8 max-w-md">
-        <div class="flex items-center gap-3 mb-1">
-          <Icon name="lucide:credit-card" width={20} height={20} class="text-primary" />
-          <h3 class="text-lg font-semibold text-primary">Self-Service Pricing</h3>
+        <!-- Text -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent">
+              <Icon name="lucide:washing-machine" width={24} height={24} class="text-primary" />
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold">Self-Service Laundry</h2>
+          </div>
+          <p class="text-foreground/80 text-lg leading-relaxed mb-8">
+            Our modern washers and dryers are designed for simplicity and efficiency. With our reloadable laundry card
+            system, there is no need for coins — load your card and start your cycle.
+          </p>
+
+          <!-- Self-Service Pricing Card -->
+          <div class="bg-card rounded-2xl border border-border shadow-sm p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-1">
+              <Icon name="lucide:credit-card" width={20} height={20} class="text-primary" />
+              <h3 class="text-lg font-semibold text-primary">Self-Service Pricing</h3>
+            </div>
+            <p class="text-muted-foreground text-sm mb-5">Coin-free laundry card system</p>
+
+            <ul class="space-y-3 text-foreground/80">
+              {selfServicePricing.items.map(({ item, price }) => (
+                <li class="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0">
+                  <span>{item}</span>
+                  <span class="font-semibold text-primary">{price}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p class="text-muted-foreground text-xs mt-5 leading-relaxed">
+              {selfServicePricing.note}
+            </p>
+          </div>
         </div>
-        <p class="text-muted-foreground text-sm mb-5">Coin-free laundry card system</p>
-
-        <ul class="space-y-3 text-foreground/80">
-          {selfServicePricing.items.map(({ item, price }) => (
-            <li class="flex justify-between border-b border-border/50 pb-2 last:border-0 last:pb-0">
-              <span>{item}</span>
-              <span class="font-semibold text-primary">{price}</span>
-            </li>
-          ))}
-        </ul>
-
-        <p class="text-muted-foreground text-xs mt-5 leading-relaxed">
-          {selfServicePricing.note}
-        </p>
       </div>
     </div>
   </section>
@@ -157,7 +156,7 @@ const serviceSchema: Record<string, unknown> = {
   <!-- Wash & Fold Service -->
   <section class="py-16 md:py-24 bg-background">
     <div class="container mx-auto px-4 md:px-8 max-w-5xl">
-      <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div class="grid md:grid-cols-2 gap-10 items-stretch">
         <!-- Image - shows first on mobile -->
         <div class="rounded-2xl overflow-hidden shadow-lg order-first md:order-last">
           <img
@@ -217,16 +216,16 @@ const serviceSchema: Record<string, unknown> = {
         </div>
         <h2 class="text-2xl md:text-3xl font-bold">Comforters &amp; Specialty Items</h2>
       </div>
-      <p class="text-foreground/80 text-lg leading-relaxed mb-4 max-w-2xl">
+      <p class="text-foreground/80 text-lg leading-relaxed mb-4">
         Home washers often struggle with bulky bedding. Our commercial-grade machines provide the drum space and water capacity needed to thoroughly clean and rinse large items, giving you better results than a standard household washer.
       </p>
-      <p class="text-foreground/80 text-lg leading-relaxed mb-4 max-w-2xl">
+      <p class="text-foreground/80 text-lg leading-relaxed mb-4">
         We accept comforters, duvets, quilts, pillows, and other oversized items. Whether it's a seasonal deep clean or regular bedding maintenance, our equipment handles it all.
       </p>
-      <p class="text-foreground/80 text-lg leading-relaxed mb-4 max-w-2xl">
+      <p class="text-foreground/80 text-lg leading-relaxed mb-4">
         We offer sizes ranging from twin and full through queen and king. If you're unsure which machine to use for your bedding, our team is happy to help you choose the right fit.
       </p>
-      <p class="text-foreground/80 text-lg leading-relaxed mb-10 max-w-2xl">
+      <p class="text-foreground/80 text-lg leading-relaxed mb-10">
         Comforters and specialty items can also be included with our Wash &amp; Fold service at per-item rates. See the Wash &amp; Fold pricing above for details on twin, queen, and king comforter pricing.
       </p>
       <div class="rounded-2xl overflow-hidden shadow-lg">
