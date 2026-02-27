@@ -1,0 +1,131 @@
+---
+import { Icon } from "astro-icon/components";
+import { googleReviewData } from "@/data/reviews";
+
+const { reviews, googleBusinessUrl, averageRating, totalReviews } = googleReviewData;
+---
+
+<section class="py-20 md:py-28 bg-warm overflow-hidden">
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent mb-6">
+        <Icon name="lucide:star" width={28} height={28} class="text-primary" />
+      </div>
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+        What Our Murray Neighbors Say
+      </h2>
+      <p class="text-muted-foreground">
+        {averageRating} stars from {totalReviews} reviews on Google
+      </p>
+    </div>
+  </div>
+
+  <!-- Full-width scrolling area (no container constraint) -->
+  <div class="reviews-marquee" aria-label="Customer reviews">
+    <div class="reviews-track">
+      {/* Render cards twice for seamless loop */}
+      {[...reviews, ...reviews].map((review) => (
+        <div class="review-card bg-card rounded-2xl p-8 shadow-sm border border-border text-center flex flex-col shrink-0 w-[320px]">
+          <!-- Stars -->
+          <div class="flex justify-center gap-1 mb-4" aria-label={`${review.rating} out of 5 stars`}>
+            {Array.from({ length: 5 }).map((_, s) => (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill={s < review.rating ? "#F4B400" : "#D1D5DB"} xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            ))}
+          </div>
+
+          <!-- Review text -->
+          <blockquote class="text-foreground/80 leading-relaxed text-sm mb-5 flex-1">
+            &ldquo;{review.text}&rdquo;
+          </blockquote>
+
+          <!-- Reviewer info -->
+          <div>
+            <span class="font-semibold text-foreground text-sm">{review.reviewerName}</span>
+            <p class="text-xs text-muted-foreground mt-0.5">{review.relativeTime}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- CTA -->
+    <div class="text-center mt-10">
+      <a
+        href={googleBusinessUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-heading uppercase tracking-wide inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+      >
+        <Icon name="lucide:external-link" width={16} height={16} />
+        Read All Reviews on Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews-marquee {
+    overflow: hidden;
+    padding: 0 0 4px; /* room for card shadow */
+  }
+
+  .reviews-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scroll-left var(--scroll-duration, 60s) linear infinite;
+  }
+
+  .reviews-marquee:hover .reviews-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reviews-track {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  // Equalize card heights and set scroll duration based on content width
+  const track = document.querySelector(".reviews-track") as HTMLElement | null;
+  if (track) {
+    const cards = track.querySelectorAll(".review-card") as NodeListOf<HTMLElement>;
+
+    function equalize() {
+      // Reset
+      cards.forEach((c) => (c.style.minHeight = ""));
+
+      // Find tallest card
+      let maxH = 0;
+      cards.forEach((c) => {
+        if (c.offsetHeight > maxH) maxH = c.offsetHeight;
+      });
+
+      // Set all to same height
+      cards.forEach((c) => (c.style.minHeight = maxH + "px"));
+
+      // Set scroll duration: ~30px per second for smooth, readable pace
+      const halfWidth = track!.scrollWidth / 2;
+      const duration = halfWidth / 30;
+      track!.style.setProperty("--scroll-duration", duration + "s");
+    }
+
+    equalize();
+    window.addEventListener("resize", equalize);
+  }
+</script>

@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import logoStacked from "@/assets/logo-stacked.png";
 import { footerLinks } from "@/data/navigation";
 import { contactInfo } from "@/data/contact";
+import GoogleRatingBadge from "@/components/GoogleRatingBadge.astro";
 ---
 
 <footer class="py-12 md:py-16 bg-primary text-primary-foreground">
@@ -64,6 +65,7 @@ import { contactInfo } from "@/data/contact";
           <Icon name="lucide:facebook" width={14} height={14} />
           Facebook
         </a>
+        <GoogleRatingBadge class="mt-1" />
       </div>
     </div>
 
