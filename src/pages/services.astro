@@ -16,6 +16,8 @@ const featureIconMap: Record<string, string> = {
 const serviceSchema: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "name": "Laundry Services at The Washboard",
+  "description": "Self-service laundry, wash and fold, and comforter cleaning at The Washboard laundromat in Murray, KY.",
   "provider": {
     "@type": "Laundromat",
     "name": "The Washboard",
@@ -27,6 +29,17 @@ const serviceSchema: Record<string, unknown> = {
       "addressRegion": "KY",
       "postalCode": "42071",
       "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "36.6035",
+      "longitude": "-88.3157"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "06:00",
+      "closes": "23:00"
     }
   },
   "areaServed": {

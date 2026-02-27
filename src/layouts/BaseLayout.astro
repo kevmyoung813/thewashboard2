@@ -6,6 +6,7 @@ interface Props {
   ogType?: string;
   ogImage?: string;
   schema?: Record<string, unknown>;
+  noindex?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   ogType = "website",
   ogImage = "/og-image.jpg",
   schema,
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = "https://washboardmurray.com";
@@ -34,7 +36,8 @@ import "@/index.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {!noindex && <link rel="canonical" href={canonicalUrl} />}
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
