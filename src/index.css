@@ -1,67 +1,122 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-sans: 'Source Sans 3', sans-serif;
-    --font-heading: 'Oswald', sans-serif;
+@theme inline {
+  --font-sans: "Source Sans 3", sans-serif;
+  --font-heading: "Oswald", sans-serif;
 
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
 
-    --primary: 226 54% 20%;
-    --primary-foreground: 0 0% 100%;
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
 
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 226 54% 20%;
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 33%;
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
-    --accent: 210 50% 95%;
-    --accent-foreground: 226 54% 20%;
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 226 54% 20%;
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 
-    --radius: 0.5rem;
+  --color-brand: hsl(var(--brand-blue));
+  --color-brand-light: hsl(var(--brand-blue-light));
+  --color-warm: hsl(var(--warm-bg));
 
-    --brand-blue: 226 54% 20%;
-    --brand-blue-light: 220 40% 95%;
-    --warm-bg: 40 30% 97%;
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --container-2xl: 1400px;
+}
+
+:root {
+  --font-sans: 'Source Sans 3', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+
+  --primary: 226 54% 20%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 20% 96%;
+  --secondary-foreground: 226 54% 20%;
+
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 33%;
+
+  --accent: 210 50% 95%;
+  --accent-foreground: 226 54% 20%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 226 54% 20%;
+
+  --radius: 0.5rem;
+
+  --brand-blue: 226 54% 20%;
+  --brand-blue-light: 220 40% 95%;
+  --warm-bg: 40 30% 97%;
+
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: var(--font-sans);
     font-size: 1.0625rem;
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
