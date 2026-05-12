@@ -28,7 +28,7 @@ export const howToServiceBoxes: HowToServiceBox[] = [
 ];
 
 export const washerSteps: string[] = [
-  "Load your clothes into the washer. Avoid overloading — leave room for items to move freely.",
+  "Load your clothes into the washer. Avoid overloading. Leave room for items to move freely.",
   "Close the washer door securely.",
   "Select your wash cycle on the machine display.",
   "Place your laundry card on the ledge above the card reader's green screen to start.",
@@ -57,9 +57,44 @@ export const laundryCardSteps: string[] = [
 ];
 
 export const laundryCardTip =
-  "Keep your laundry card safe — it holds your balance and can be reloaded as many times as you need. Perfect for Murray State students and Calloway County families who visit regularly.";
+  "Keep your laundry card safe: it holds your balance and can be reloaded as many times as you need. Perfect for Murray State students and Calloway County families who visit regularly.";
 
-export const faqs: FAQ[] = [
+export const visitingFaqs: FAQ[] = [
+  {
+    q: "What are your hours?",
+    a: "We're open every day from 6:00 AM to 11:00 PM. An attendant is on-site from 8:00 AM to 5:00 PM to help with any questions.",
+  },
+  {
+    q: "Do you accept quarters or just laundry cards?",
+    a: "We use a reloadable laundry card system, so no quarters needed. You can reload your card with cash (minimum $1) or credit/debit card (minimum $10) at one of our two payment kiosks on the back wall.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "Prices vary by washer size. A typical load costs $3.50 to $7.50 to wash and dry. Our attendants can help you choose the right size machine for your load.",
+  },
+  {
+    q: "Can I stay while my laundry is washing?",
+    a: "Yes. We have comfortable seating, free WiFi, and a clean, bright space to relax while you wait.",
+  },
+  {
+    q: "What size loads can your washers handle?",
+    a: "We have multiple washer sizes, from standard loads up to extra-large machines for comforters, blankets, and bulky bedding.",
+  },
+  {
+    q: "Do you offer Wash & Fold service?",
+    a: "Yes. Drop off your laundry during attendant hours (8:00 AM to 5:00 PM) and we'll wash, dry, and fold it for you. Ask our attendant about pricing.",
+  },
+  {
+    q: "When is the best time to visit?",
+    a: "Weekday mornings and early afternoons (roughly 9:00 AM to 3:00 PM) tend to be quieter. Weekends and evenings are our busiest times.",
+  },
+  {
+    q: "Is there WiFi available?",
+    a: "Yes. We offer free WiFi for all customers.",
+  },
+];
+
+export const usageFaqs: FAQ[] = [
   {
     q: "Do I need coins to use the machines?",
     a: "No. The Washboard uses a reloadable laundry card system instead of coins.",
@@ -82,7 +117,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "What items are not allowed in machines?",
-    a: "Items that may damage machines — including certain dyes or heavily soiled materials — should not be placed in washers or dryers.",
+    a: "Items that may damage machines, including certain dyes or heavily soiled materials, should not be placed in washers or dryers.",
   },
 ];
 

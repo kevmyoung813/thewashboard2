@@ -2,13 +2,14 @@
 import { Icon } from "astro-icon/components";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import MapContactSection from "@/components/MapContactSection.astro";
+import ContactHoursSection from "@/components/ContactHoursSection.astro";
 import { contactInfo } from "@/data/contact";
 
 const contactSchema: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": ["Laundromat", "LocalBusiness"],
   "name": "The Washboard",
-  "description": "Murray, KY's friendly neighborhood laundromat offering self-service laundry, wash and fold, and comforter cleaning. Open daily 6am–11pm.",
+  "description": "Murray, KY's friendly neighborhood laundromat offering self-service laundry, wash and fold, and comforter cleaning. Open every day 6 AM to 11 PM.",
   "url": "https://www.washboardmurray.com",
   "telephone": "270-768-7058",
   "address": {
@@ -41,18 +42,21 @@ const contactSchema: Record<string, unknown> = {
 ---
 
 <BaseLayout
-  title="Contact The Washboard | Murray, KY Laundromat"
-  description="Get directions, hours, and contact information for The Washboard laundromat at 605 S. 12th St in Murray, KY. Open every day 6am–11pm."
+  title="Hours, Directions & Contact - The Washboard Laundromat in Murray, KY"
+  description="Open every day 6 AM to 11 PM in Murray, KY. Attendant on-site 8 AM to 5 PM daily for Wash & Fold and questions. Get directions, hours, and contact info for The Washboard at 605 S. 12th St."
   schema={contactSchema}
 >
   <!-- Hero -->
   <section class="py-16 md:py-20 bg-background">
     <div class="container mx-auto px-4 md:px-8 text-center max-w-3xl">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-        Contact &amp; Directions
+        Hours, Directions &amp; Contact
       </h1>
-      <p class="text-lg text-muted-foreground mb-8">
-        Stop by The Washboard in Murray, KY — we're open every day from 6am to 11pm.
+      <p class="text-lg md:text-xl text-foreground/90 font-medium mb-2">
+        Open every day, 6:00 AM &ndash; 11:00 PM
+      </p>
+      <p class="text-base text-muted-foreground mb-8">
+        Attendant on-site 8:00 AM &ndash; 5:00 PM daily &middot; 605 S. 12th St, Murray, KY
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a
@@ -76,4 +80,5 @@ const contactSchema: Record<string, unknown> = {
   </section>
 
   <MapContactSection />
+  <ContactHoursSection />
 </BaseLayout>

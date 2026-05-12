@@ -26,7 +26,8 @@ export {
   dryerTip,
   laundryCardSteps,
   laundryCardTip,
-  faqs,
+  visitingFaqs,
+  usageFaqs,
   howItWorksSteps,
 } from "./howto";
 export { ruleSections } from "./rules";

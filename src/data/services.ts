@@ -63,7 +63,7 @@ export const washFoldPricing: WashFoldPricing = {
 
 export const experienceFeatures: string[] = [
   "Clean, modern machines that are easy to use",
-  "Reloadable laundry card system — no coins needed",
+  "Reloadable laundry card system (no coins needed)",
   "Comfortable, welcoming environment",
   "Friendly support when you need it",
   "Wash & Fold service for busy days",

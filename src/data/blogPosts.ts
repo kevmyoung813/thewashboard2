@@ -28,7 +28,7 @@ Consistency reduces last-minute stress.
 
 ## Sort Before You Arrive
 
-Separating loads at home — lights, darks, towels, bedding — saves time once you're at the laundromat.
+Separating loads at home (lights, darks, towels, bedding) saves time once you're at the laundromat.
 
 This allows you to [choose the correct washer size](/blog/how-to-choose-the-right-washer-size) and start cycles more efficiently.
 
@@ -40,7 +40,7 @@ Clothing needs room to move freely for proper cleaning. Selecting the right wash
 
 ## Consider Wash & Fold for Full Weeks
 
-During especially busy seasons — holidays, back-to-school, or sports schedules — [Wash & Fold service](/services) can provide welcome relief.
+During especially busy seasons (holidays, back-to-school, or sports schedules), [Wash & Fold service](/services) can provide welcome relief.
 
 Instead of spending several hours managing multiple loads, families can drop off laundry and focus on other priorities.
 
@@ -56,7 +56,7 @@ A well-maintained facility with modern equipment helps ensure dependable results
 
 Laundry doesn't have to be overwhelming.
 
-With the right approach — and access to dependable [laundry services in Murray, KY](/services) — families can turn a weekly chore into a manageable routine.
+With the right approach, and access to dependable [laundry services in Murray, KY](/services), families can turn a weekly chore into a manageable routine.
 
 You can view our full service options and pricing on our [services page](/services).`,
   },
@@ -65,8 +65,8 @@ You can view our full service options and pricing on our [services page](/servic
     title: "What to Look for in a Murray, KY Laundromat",
     date: "2026-02-20",
     excerpt:
-      "Choosing a laundromat in Murray, KY? Here's what to look for — and how The Washboard stacks up on cleanliness, machines, comfort, and service.",
-    content: `When choosing a laundromat in Murray, KY, convenience matters — but so does quality.
+      "Choosing a laundromat in Murray, KY? Here's what to look for, and how The Washboard stacks up on cleanliness, machines, comfort, and service.",
+    content: `When choosing a laundromat in Murray, KY, convenience matters. But so does quality.
 
 Not all laundromats offer the same experience. Whether you're a long-time Calloway County resident or a Murray State student living near campus, knowing what to look for can make your weekly laundry routine much easier.
 
@@ -95,7 +95,7 @@ Features such as:
 
 help simplify the process and reduce frustration.
 
-You shouldn't have to guess how to start a machine or wonder which cycle to use. A good laundromat provides clear guidance — whether through posted instructions, [online how-to guides](/how-to), or helpful staff. When the equipment is intuitive and well-maintained, it makes the entire visit faster and easier.
+You shouldn't have to guess how to start a machine or wonder which cycle to use. A good laundromat provides clear guidance, whether through posted instructions, [online how-to guides](/how-to), or helpful staff. When the equipment is intuitive and well-maintained, it makes the entire visit faster and easier.
 
 ## Comfortable Environment
 
@@ -132,7 +132,7 @@ You should know the cost of each washer size, dryer time, and any drop-off servi
 
 At the end of the day, reliability matters most.
 
-A laundromat should provide consistent results, clear communication, and an environment that respects customers' time and belongings. Every visit should meet the same standard — clean machines, a comfortable space, and friendly support when you need it.
+A laundromat should provide consistent results, clear communication, and an environment that respects customers' time and belongings. Every visit should meet the same standard: clean machines, a comfortable space, and friendly support when you need it.
 
 ## How The Washboard Meets These Standards
 
@@ -203,8 +203,8 @@ Choosing the right washer makes your visit more efficient and helps keep your la
     title: "A Laundry Guide for Murray State Students",
     date: "2026-02-10",
     excerpt:
-      "Starting college comes with new responsibilities — including laundry. Here's what Murray State students in Murray, KY need to know about The Washboard.",
-    content: `Starting college comes with a lot of new responsibilities — including laundry.
+      "Starting college comes with new responsibilities, including laundry. Here's what Murray State students in Murray, KY need to know about The Washboard.",
+    content: `Starting college comes with a lot of new responsibilities, including laundry.
 
 For Murray State students living on or near campus, finding a clean, dependable laundromat in Murray, KY can make weekly routines much easier.
 
@@ -244,7 +244,7 @@ When selecting a laundromat in Murray, KY, look for:
 
 A dependable laundromat helps keep college life organized and manageable.
 
-Whether you're new to Murray or a returning student, having a reliable laundry routine makes a difference throughout the semester. Our [laundry card system](/how-to/laundry-card) makes it easy to get started — no coins needed.
+Whether you're new to Murray or a returning student, having a reliable laundry routine makes a difference throughout the semester. Our [laundry card system](/how-to/laundry-card) makes it easy to get started. No coins needed.
 
 Learn more about everything we offer on our [services page](/services).`,
   },
@@ -332,8 +332,8 @@ If you're looking for Wash & Fold service in Murray, KY, stop by and learn how i
     title: "What Makes The Washboard Different in Murray, KY",
     date: "2026-02-01",
     excerpt:
-      "When you're looking for a laundromat in Murray, KY, convenience matters — but so does the experience. Learn what sets The Washboard apart.",
-    content: `When you're looking for a laundromat in Murray, KY, convenience matters — but so does the experience.
+      "When you're looking for a laundromat in Murray, KY, convenience matters. But so does the experience. Learn what sets The Washboard apart.",
+    content: `When you're looking for a laundromat in Murray, KY, convenience matters. But so does the experience.
 
 At The Washboard, we believe laundry should feel simple, clean, and stress-free. That's why we've built our facility around customer comfort and dependable service.
 
@@ -377,7 +377,7 @@ We offer trusted detergent options including Tide, Gain, and All Free & Clear. C
 
 ## What to Expect on Your First Visit
 
-If you haven't been to The Washboard before, here's what to expect. When you walk in, you'll find a clean, well-lit space with machines clearly organized by size. Our [laundry card kiosks](/how-to/laundry-card) are on the back wall — you can purchase and load a card in just a few minutes.
+If you haven't been to The Washboard before, here's what to expect. When you walk in, you'll find a clean, well-lit space with machines clearly organized by size. Our [laundry card kiosks](/how-to/laundry-card) are on the back wall. You can purchase and load a card in just a few minutes.
 
 Folding tables, seating, and posted guidelines are available throughout the facility. If you have any questions about machine operation, detergent, or our services, don't hesitate to ask. We want every visit to feel easy and welcoming.
 

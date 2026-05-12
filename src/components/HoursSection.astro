@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+import { contactInfo } from "@/data/contact";
+
+interface HoursPoint {
+  icon: string;
+  title: string;
+  detail: string;
+}
+
+const hoursPoints: HoursPoint[] = [
+  {
+    icon: "lucide:clock",
+    title: "Open Every Day",
+    detail: "6:00 AM to 11:00 PM, no exceptions.",
+  },
+  {
+    icon: "lucide:user-round-check",
+    title: "Attendant On-Site",
+    detail: "8:00 AM to 5:00 PM daily, for questions and Wash & Fold.",
+  },
+  {
+    icon: "lucide:calendar-heart",
+    title: "Never Closed for Holidays",
+    detail: "Open every day of the year, including Christmas Day.",
+  },
+  {
+    icon: "lucide:shield-check",
+    title: "Always Well-Lit and Safe",
+    detail: "Bright interior and exterior lighting from open to close.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-primary">
+  <div class="container mx-auto px-4 md:px-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 !text-primary-foreground">
+      When We're Open
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 max-w-5xl mx-auto mb-12 md:mb-14">
+      {hoursPoints.map((point) => (
+        <div class="flex flex-col items-center text-center gap-4">
+          <div class="w-14 h-14 rounded-full bg-primary-foreground/10 flex items-center justify-center shrink-0">
+            <Icon
+              name={point.icon}
+              width={26}
+              height={26}
+              class="text-primary-foreground"
+            />
+          </div>
+          <h3 class="text-base md:text-lg font-bold !text-primary-foreground leading-tight">
+            {point.title}
+          </h3>
+          <p class="text-primary-foreground/85 text-sm leading-relaxed max-w-[16ch] sm:max-w-none">
+            {point.detail}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={contactInfo.phoneHref}
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
+      >
+        <Icon name="lucide:phone" width={18} height={18} /> Call {contactInfo.phoneFormatted}
+      </a>
+      <a
+        href={contactInfo.googleMapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-foreground px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+      >
+        <Icon name="lucide:map-pin" width={18} height={18} /> Get Directions
+      </a>
+    </div>
+  </div>
+</section>

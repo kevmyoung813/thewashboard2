@@ -1,0 +1,86 @@
+---
+import { Icon } from "astro-icon/components";
+import { contactInfo } from "@/data/contact";
+
+interface HoursBlock {
+  icon: string;
+  label: string;
+  time: string;
+  detail: string;
+}
+
+const hoursBlocks: HoursBlock[] = [
+  {
+    icon: "lucide:store",
+    label: "Self-Service Lobby",
+    time: "6:00 AM – 11:00 PM",
+    detail: "Open every day of the year. Walk in any time during open hours.",
+  },
+  {
+    icon: "lucide:user-round-check",
+    label: "Attendant On-Site",
+    time: "8:00 AM – 5:00 PM",
+    detail: "Every day, for Wash & Fold drop-off, card help, and questions.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-warm">
+  <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Hours &amp; Visiting</h2>
+      <p class="text-muted-foreground max-w-xl mx-auto">
+        Open every day of the year in Murray, KY. Here&rsquo;s exactly when the lobby is open and when an attendant is on-site.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      {hoursBlocks.map((block) => (
+        <div class="bg-card rounded-2xl border border-border shadow-sm p-8 flex flex-col items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center shrink-0">
+            <Icon
+              name={block.icon}
+              width={24}
+              height={24}
+              class="text-primary"
+            />
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm uppercase tracking-wide font-semibold text-muted-foreground">
+              {block.label}
+            </p>
+            <p class="font-heading text-3xl md:text-4xl font-bold text-primary leading-none">
+              {block.time}
+            </p>
+          </div>
+          <p class="text-foreground/80 leading-relaxed">{block.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-secondary rounded-2xl p-6 md:p-8 flex gap-4 items-start mb-10">
+      <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+        <Icon name="lucide:badge-info" width={20} height={20} class="text-primary" />
+      </div>
+      <div>
+        <p class="font-bold text-foreground mb-2">Best times to visit</p>
+        <p class="text-foreground/80 leading-relaxed">
+          Weekday mornings and early afternoons (roughly 9:00 AM to 3:00 PM) tend to be quietest. Weekends and evenings are our busiest times, so plan ahead if you have a tight schedule.
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-4 text-foreground/80 leading-relaxed">
+      <p>
+        <span class="font-bold text-foreground">Holidays.</span>
+        We&rsquo;re open every day of the year, including Thanksgiving, Christmas, and New Year&rsquo;s Day. The lobby keeps the same 6:00 AM to 11:00 PM hours; the attendant takes the day off on major holidays, so plan Wash &amp; Fold drop-offs around that.
+      </p>
+      <p>
+        <span class="font-bold text-foreground">After-hours questions.</span>
+        Leave a voicemail at
+        <a href={contactInfo.phoneHref} class="text-primary hover:underline font-semibold">{contactInfo.phoneFormatted}</a>
+        and we&rsquo;ll get back to you the next morning when the attendant is back on-site.
+      </p>
+    </div>
+  </div>
+</section>

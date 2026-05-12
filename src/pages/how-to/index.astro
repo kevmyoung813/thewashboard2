@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { howToServiceBoxes, faqs } from "@/data/howto";
+import { howToServiceBoxes, visitingFaqs, usageFaqs } from "@/data/howto";
 import { contactInfo } from "@/data/contact";
 
 const iconNameMap: Record<string, string> = {
@@ -9,11 +9,22 @@ const iconNameMap: Record<string, string> = {
   Wind: "lucide:wind",
   CreditCard: "lucide:credit-card",
 };
+
+const faqSchema: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [...visitingFaqs, ...usageFaqs].map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+  })),
+};
 ---
 
 <BaseLayout
   title="How to Use Our Laundromat - Murray, KY | The Washboard"
   description="Step-by-step guides for using the washers, dryers, and laundry card system at The Washboard in Murray, KY. Simple instructions for every visit."
+  schema={faqSchema}
 >
   <!-- Hero -->
   <section class="py-20 md:py-28 bg-background">
@@ -80,23 +91,41 @@ const iconNameMap: Record<string, string> = {
     <div class="container mx-auto px-4 md:px-8 max-w-3xl">
       <div class="text-center mb-12">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">
-          Helpful Guidelines &amp; FAQs
+          Frequently Asked Questions
         </h2>
         <p class="text-muted-foreground">
-          Quick answers to common questions before you start your laundry.
+          Quick answers about visiting us and using our machines.
         </p>
       </div>
 
-      <div class="w-full">
-        {faqs.map((faq) => (
-          <details class="group border-b">
-            <summary class="flex items-center justify-between py-4 font-medium cursor-pointer hover:underline text-base list-none [&::-webkit-details-marker]:hidden">
-              {faq.q}
-              <Icon name="lucide:chevron-down" width={16} height={16} class="shrink-0 transition-transform duration-200 group-open:rotate-180" />
-            </summary>
-            <div class="pb-4 text-sm text-muted-foreground">{faq.a}</div>
-          </details>
-        ))}
+      <div class="mb-12">
+        <h3 class="text-xl font-bold mb-6">Visiting The Washboard</h3>
+        <div class="w-full">
+          {visitingFaqs.map((faq) => (
+            <details class="group border-b">
+              <summary class="flex items-center justify-between py-4 font-medium cursor-pointer hover:underline text-base list-none [&::-webkit-details-marker]:hidden">
+                {faq.q}
+                <Icon name="lucide:chevron-down" width={16} height={16} class="shrink-0 transition-transform duration-200 group-open:rotate-180" />
+              </summary>
+              <div class="pb-4 text-sm text-muted-foreground">{faq.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-6">Using Our Machines</h3>
+        <div class="w-full">
+          {usageFaqs.map((faq) => (
+            <details class="group border-b">
+              <summary class="flex items-center justify-between py-4 font-medium cursor-pointer hover:underline text-base list-none [&::-webkit-details-marker]:hidden">
+                {faq.q}
+                <Icon name="lucide:chevron-down" width={16} height={16} class="shrink-0 transition-transform duration-200 group-open:rotate-180" />
+              </summary>
+              <div class="pb-4 text-sm text-muted-foreground">{faq.a}</div>
+            </details>
+          ))}
+        </div>
       </div>
 
       <p class="text-center text-muted-foreground text-sm mt-12">
