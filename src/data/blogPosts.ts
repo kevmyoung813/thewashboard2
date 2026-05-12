@@ -377,7 +377,7 @@ We offer trusted detergent options including Tide, Gain, and All Free & Clear. C
 
 ## What to Expect on Your First Visit
 
-If you haven't been to The Washboard before, here's what to expect. When you walk in, you'll find a clean, well-lit space with machines clearly organized by size. Our [laundry card kiosk](/how-to/laundry-card) is located near the entrance — you can purchase and load a card in just a few minutes.
+If you haven't been to The Washboard before, here's what to expect. When you walk in, you'll find a clean, well-lit space with machines clearly organized by size. Our [laundry card kiosks](/how-to/laundry-card) are on the back wall — you can purchase and load a card in just a few minutes.
 
 Folding tables, seating, and posted guidelines are available throughout the facility. If you have any questions about machine operation, detergent, or our services, don't hesitate to ask. We want every visit to feel easy and welcoming.
 

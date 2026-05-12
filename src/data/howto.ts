@@ -31,7 +31,7 @@ export const washerSteps: string[] = [
   "Load your clothes into the washer. Avoid overloading — leave room for items to move freely.",
   "Close the washer door securely.",
   "Select your wash cycle on the machine display.",
-  "Tap your loaded laundry card on the card reader to start.",
+  "Place your laundry card on the ledge above the card reader's green screen to start.",
   "Wait for the cycle to complete, then promptly remove your items.",
 ];
 
@@ -42,7 +42,7 @@ export const dryerSteps: string[] = [
   "Transfer your washed clothes into the dryer. Shake out items to help reduce drying time.",
   "Close the dryer door securely.",
   "Select your preferred heat setting on the display.",
-  "Tap your loaded laundry card on the card reader to start.",
+  "Place your laundry card on the ledge above the card reader's green screen to start.",
   "Remove your clothes promptly when the cycle finishes to reduce wrinkles.",
 ];
 
@@ -50,11 +50,10 @@ export const dryerTip =
   "Avoid overloading the dryer. Proper loading allows air to circulate and dry your clothes more efficiently.";
 
 export const laundryCardSteps: string[] = [
-  "Pick up a reloadable laundry card at The Washboard, available at the front counter.",
-  "Add value to your card using the card loading station.",
+  "Purchase a reloadable laundry card at one of our two payment kiosks on the back wall. Include your phone number so we can replace it if lost.",
   "Take your card to any available washer or dryer.",
-  "Tap your card on the machine's card reader to start your cycle.",
-  "Reload your card anytime you need more value.",
+  "Place your card on the ledge above the reader (it doesn't swipe or insert) to start the cycle.",
+  "Reload your card at the same kiosks any time.",
 ];
 
 export const laundryCardTip =
@@ -90,6 +89,6 @@ export const faqs: FAQ[] = [
 export const howItWorksSteps: HowItWorksStep[] = [
   { icon: "CreditCard", label: "Load your laundry card" },
   { icon: "MonitorSmartphone", label: "Choose your machine" },
-  { icon: "Fingerprint", label: "Tap your card to start" },
+  { icon: "ArrowDownToLine", label: "Place your card on the reader" },
   { icon: "Armchair", label: "Relax while your laundry gets done" },
 ];
